@@ -27,7 +27,7 @@ IRRF = (3000-270) x 15% – 354,80
 
 IRRF = R$ 54,70 por mês.'
 
-### Exemplo com dois dependentes
+### Exemplo com dependentes (BÔNUS)
 O valor reduzido passa a ser a nova base cálculo para o imposto de renda retido na fonte.
 
 Veja como fica:
