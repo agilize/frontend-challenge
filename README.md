@@ -74,5 +74,5 @@ Neste caso, o valor do salário após o desconto de R$ 103,10 em imposto de rend
 
 ## Como você deve nos enviar sua solução?
 
-Faça um clone desde projeto, crie uma branch com seu nome-sobrenome e ao finalizar abra um pull-request para um avaliador da agilize
+Faça um clone desde projeto, crie uma branch com seu nome-sobrenome e ao finalizar abra um pull-request para que um avaliador da agilize possa visualizar
 e envie um e-mail para [dev@agilize.com.br](mailto:dev@agilize.com.br) com o assunto: **[DESAFIO FRONTEND AGZ] + Finalizado + (nome-da-branch)**
