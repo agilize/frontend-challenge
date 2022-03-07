@@ -11,7 +11,7 @@ Contudo, também é preciso somar todos os adicionais recebidos, com adicional n
 ## O desafio
 
 - Fazer uma calculadora de salário liquido semeliante a essa do IDinheiro: [Acesse para visualizar](https://www.idinheiro.com.br/calculadoras/calculadora-de-salario-liquido/)
-
+- [Layout do projeto](https://www.figma.com/file/wFJI3VnorFffh6tVcvYqlg/Calculadora-de-sal%C3%A1rio-l%C3%ADquido?node-id=1%3A12)
 ### Vamos a um exemplo para ficar mais fácil de entender? (Exemplo sem dependentes)
 
 Imagine que você receba o salário de R$ 3.000,00 por mês, e o seu desconto de INSS seja de 9%.
