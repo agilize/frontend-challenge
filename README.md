@@ -27,6 +27,10 @@ IRRF = (3000-270) x 15% – 354,80
 
 IRRF = R$ 54,70 por mês.'
 
+**Bônus**:
+- Incluir calculo de dedução por dependentes na calculadora
+  - A dedução é de **R$189,59** por cada dependente.
+
 ### Exemplo com dependentes (BÔNUS)
 O valor reduzido passa a ser a nova base cálculo para o imposto de renda retido na fonte.
 
@@ -60,9 +64,6 @@ Neste caso, o valor do salário após o desconto de R$ 103,10 em imposto de rend
 | Acima de R$ 4.664,68  	|  27,5%	|   R$ 869,36	|
 
 
-**Bônus**: 
-- Incluir calculo de dedução por dependentes na calculadora
-  - A dedução é de **R$189,59** por cada dependente.
 
 ## Sugestões
 
