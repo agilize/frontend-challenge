@@ -1,0 +1,59 @@
+.select__main {
+
+  .select__icon {
+    color: $branco;
+    font-size: 40px;
+    margin-right: 1rem;
+
+    &:hover {
+      color: $brancoHover;
+    }
+  }
+
+  .select__icon:nth-last-of-type(1) {
+    margin-left: 1rem;
+  }
+  
+  strong {
+    color: $branco;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    word-spacing: 1.5px;
+  }
+
+  .select__description {
+    display: flex;
+    color: $branco;
+    align-items: center;
+
+    p {
+      font-size: 1.4rem;
+      font-family: $fontLight;
+      letter-spacing: -0.5px;
+    }
+
+    .select__icon {
+      font-size: 24px;
+      margin-right: 0.6rem;
+    }
+  }
+
+  .select__group {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 20px;
+      height: 67px;
+      border-radius: 50px;
+      border: none;
+      padding-right: 50px;
+      padding-left: 50px;
+      font-size: 30px;
+    }
+
+  }
+}
