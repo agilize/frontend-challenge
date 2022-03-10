@@ -10,7 +10,7 @@ Contudo, também é preciso somar todos os adicionais recebidos, com adicional n
 
 ## O desafio
 
-- Fazer uma calculadora de salário liquido semeliante a essa do IDinheiro: [Acesse para visualizar](https://www.idinheiro.com.br/calculadoras/calculadora-de-salario-liquido/)
+- Fazer uma calculadora de salário liquido semelhante a essa do IDinheiro: [Acesse para visualizar](https://www.idinheiro.com.br/calculadoras/calculadora-de-salario-liquido/)
 - Confira o [layout do projeto](https://www.figma.com/file/wFJI3VnorFffh6tVcvYqlg/Calculadora-de-sal%C3%A1rio-l%C3%ADquido?node-id=1%3A12)
 - Tecnologias esperadas:
   - React, Html, CSS
