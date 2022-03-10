@@ -14,8 +14,14 @@ body {
 
 }
 
+// Importando fonts
 @import '../public/fonts/fonts.scss';
+
+// Estilos dos componentes Header
 @import '../components/Header/header.scss';
+
+// Estilos dos componentes InputContainer
 @import '../components/InputContainer/InputElement/input.scss';
 @import '../components/InputContainer/SelectDependent/select.scss';
+@import '../components/InputContainer/ButtonCalculator/button.scss';
 @import '../components/InputContainer/inputcontainer.scss';

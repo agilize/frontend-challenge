@@ -1,3 +1,4 @@
+import ButtonCalculator from './ButtonCalculator';
 import InputElement from './InputElement';
 import SelectDependent from './SelectDependent';
 
@@ -7,6 +8,7 @@ export default function InputContainer() {
       <InputElement question="Qual seu salario bruto?" description="Salario bruto sem descontos" />
       <InputElement question="Total de descontos" description="Pensao alimenticia, plano de saude..." />
       <SelectDependent />
+      <ButtonCalculator />
     </div>
   );
 }
