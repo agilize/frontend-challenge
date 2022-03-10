@@ -1,87 +1,70 @@
-# Calculadora de salário liquido
+# Getting Started with Create React App
 
-Para iniciar um cálculo de salário líquido, o primeiro dado cadastrado será o valor do salário bruto. Com essa informação você terá a base para os percentuais de descontos que serão feitos durante o processo de cálculo.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Em seguida, devem ser levantados todos os descontos realizados em um determinado mês. 
+## Available Scripts
 
-Esses descontos podem ser o INSS, o Imposto de Renda, desconto de vale transporte, vale refeição, planos de saúde e tudo que é descontado do seu salário.
+In the project directory, you can run:
 
-Contudo, também é preciso somar todos os adicionais recebidos, com adicional noturno, hora extra, insalubridade e qualquer benefício que possa ser somado no mês de referência.
+### `npm start`
 
-## O desafio
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- Fazer uma calculadora de salário liquido semeliante a essa do IDinheiro: [Acesse para visualizar](https://www.idinheiro.com.br/calculadoras/calculadora-de-salario-liquido/)
-- Confira o [layout do projeto](https://www.figma.com/file/wFJI3VnorFffh6tVcvYqlg/Calculadora-de-sal%C3%A1rio-l%C3%ADquido?node-id=1%3A12)
-- Tecnologias esperadas:
-  - React, Html, CSS
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Vamos a um exemplo para ficar mais fácil de entender? (Exemplo sem dependentes)
+### `npm test`
 
-Imagine que você receba o salário de R$ 3.000,00 por mês, e o seu desconto de INSS seja de 9%.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Primeiro, você verifica a faixa salarial e a alíquota correspondente, ou seja, para R$ 3.000,00 a alíquota é de 15%. Assim, para calcular o Imposto de Renda Retido na Fonte, você inicia descontando o valor pago para o INSS, que,  no exemplo, seria o salário bruto, R$ 3.000,00 menos 9%, ou seja, menos R$ 270,00.  E, depois, é só reduzir do valor a parcela dedutível. Nesse caso, teríamos o seguinte:
+### `npm run build`
 
-IRRF = (salário bruto – desconto INSS) x alíquota IRRF – parcela dedutível
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-IRRF = (3000-270) x 15% – 354,80
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-IRRF = R$ 54,70 por mês.'
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-**Bônus**:
-- Incluir calculo de dedução por dependentes na calculadora
-  - A dedução é de **R$189,59** por cada dependente.
+### `npm run eject`
 
-### Exemplo com dependentes (BÔNUS)
-O valor reduzido passa a ser a nova base cálculo para o imposto de renda retido na fonte.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Veja como fica:
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Dedução para 2 dependentes: **3.431,82 - (2 x 189,59) = 3.052,64**
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Alíquota: **3.052,64 x 15% = 457,90**
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Parcela a deduzir: **457,90 - 354,80 = 103,10**
+## Learn More
 
-Neste caso, o valor do salário após o desconto de R$ 103,10 em imposto de renda deve ficar em R$ 3.328,72.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Tabela do INSS
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-|  FAIXA DE SALÁRIO 	|   ALÍQUOTA APLICADA	|
-|--- 	|---	|
-| Até um salário-mínimo (R$ 1.212,00 em 2022)  	|   7,5%	|
-| R$ 1.212,01 até R$ 2.427,35  	|   9%	| 
-| R$ 2.427,36 até R$ 3.641,03  	|   12%	|
-| De R$ 3.641,04 até R$ 7.087,22 (Teto do INSS em 2022)  	|  14%	|
+### Code Splitting
 
-## Tabela do IRRF
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-|  FAIXA DE SALÁRIO 	|   ALÍQUOTA APLICADA	|   PARCELA DE DEDUÇÃO	|
-|--- 	|---	|---	|
-| Até R$ 1.903,98: isento de imposto de renda  	|   -	|   -	|
-| Se está entre R$ 1.903,99 e 2.826,65  	|   7,5%	|    R$ 142,80	|
-| De R$ 2.826,66 a R$ 3.751,05  	|   15%	|    R$ 354,80	|
-| De R$ 3.751,06 a R$ 4.664,68 (Teto do INSS em 2022)  	|  22,5%	|   R$ 636,13	|
-| Acima de R$ 4.664,68  	|  27,5%	|   R$ 869,36	|
+### Analyzing the Bundle Size
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
+### Making a Progressive Web App
 
-## Sugestões
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-- Faça um segundo README com o nome PROJETO.md explicando o que foi feito, como forma de documentação.
-- Diferenciais:
-    - Boa documentação
-    - Testes unitários modulares
+### Advanced Configuration
 
-## Como você deve nos enviar sua solução?
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-Faça um clone desde projeto, crie uma branch com seu nome-sobrenome e ao finalizar abra um pull-request para que um avaliador da agilize possa visualizar
-e envie um e-mail para [dev@agilize.com.br](mailto:dev@agilize.com.br) com o assunto: **[DESAFIO FRONTEND AGZ] + Finalizado + (nome-da-branch)**
+### Deployment
 
-## Como abrir um pull request
-- Passo 1: Fazer um fork do projeto
-- Passo 2: Clonar seu fork para o seu computador
-- Passo 3: Fazer o projeto em sua branch
-- Passo 4: Abrir o pull request
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-Para mais detalhes esse [link](https://www.webdevdrops.com/como-criar-um-pull-request-no-github-passo-a-passo/) tem uma explicação bastante completa
+### `npm run build` fails to minify
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
