@@ -10,8 +10,8 @@ export default function Home() {
         <title>Your money safe in our pockets!</title>
       </Head>
       <Header />
-      <InputContainer />
-      <TotalContainer />
+        <InputContainer />
+        <TotalContainer />
     </body>
-  )
+  );
 }
