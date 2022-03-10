@@ -38,11 +38,12 @@ export default function TotalContainer() {
             <p>Outros descontos</p>
             <p>R$ 2.800,00</p>
           </div>
-        </div>
-        <hr />
-        <div>
-          <p>Salário líquido</p>
-          <p>R$ 2.800,00</p>
+          <hr />
+
+          <div>
+            <p>Salário líquido</p>
+            <p>R$ 2.800,00</p>
+          </div>
         </div>
       </div>
     </div>

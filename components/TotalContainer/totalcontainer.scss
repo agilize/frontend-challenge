@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
 
+  // Seu salario liquido sera - image
   .total__title-resume {
 
     display: flex;
@@ -53,4 +54,47 @@
     }
   }
 
-}
+  // Como o calculo e feito?
+  .total__title-complete {
+    margin: 5rem;
+    color: $branco;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    
+    div {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1rem;
+      width: 390px;
+
+      hr {
+        width: 100%;
+        border: 1px solid $branco;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+          font-size: 1.5rem;
+          letter-spacing: -0.5px;
+        }
+      }
+    }
+
+    
+    
+    }}
