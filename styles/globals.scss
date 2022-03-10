@@ -1,0 +1,20 @@
+@import 'variaveis.scss';
+
+* {
+  font-family: $fontRegular;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: auto;
+  height: 1406px;
+  background: linear-gradient(116.58deg, #5A2782 0%, #7A1F9A 29.33%, #4939A7 60.02%, #0B7FB0 79.47%);
+
+}
+
+@import '../public/fonts/fonts.scss';
+@import '../components/Header/header.scss';
+@import '../components/InputContainer/InputElement/input.scss';
+@import '../components/InputContainer/inputcontainer.scss';
