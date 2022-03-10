@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Boas vindas ao repositório do Agilize-Frontend-Project!
+## Contexto
+Este projeto foi um desafio enviado para mim durante o Processo Seletivo na empresa Agilize. O desafio consiste em desenvolver uma aplicação JavaScript utilizando o React, que  fosse capaz de calcular o salário liquido, a partir do valor do salário bruto (que servirá de base para o calculo dos descontos), da quantidade de dependentes (declarados no Imposto de renda), além da inclusão de outros descontos realizados (plano de saúde, pensão alimentícia, ...).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## `Bibliotecas utilizadas no desenvolvimento:
+    bootstrap - ^5.1.3,
+    inputmask -  ^5.0.7,
+    react-bootstrap - ^2.2.0,
+    react-currency-input - ^1.3.6,
+    react-dom: ^17.0.2,
+    react-router-dom: ^6.2.2,
 
-## Available Scripts
 
-In the project directory, you can run:
+## `Instalação do projeto localmente
+Após cada um dos passos, haverá um exemplo do comando a ser digitado para fazer o que está sendo orientado, caso tenha dificuldades e o exemplo não seja suficiente, não hesite em me contatar em davimarque2000@gmail.com.
 
-### `npm start`
+1. clone o Projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    git clone https://github.com/dadacm/frontend-challenge.git
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2.Agora entre no diretório do projeto clonado e rode o comando npm install para instalar as dependências do projeto (não se preocupe, você poderá excluir tudo depois que utilizar o app).
 
-### `npm test`
+    cd frontend-challenge
+    npm install
+  
+ 3.Depois da instalação, basta executar o comando npm start para iniciar o servidor e abrir o site. (Caso alguma mensagem de erro apareça no seu terminal, verifique se já possui alguma aplicação em execução em seu localhost:3000)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    npm start
 
-### `npm run build`
+Após a execução do terceiro passo o navegador ja deverá abrir automaticamente a aplicação
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Como Utilizar ?
+A calculadora de salário liquido é muito facil de ser utilizada. Basta o Usuário colocar o valor de seu salário bruto, os descontos realizados no mês, e a quantidade de dependentes (declarados no imposto de renda) nos campos indicados e então clicar no botão "calcular".O resultado será o valor do salário liquido ja calculado e uma tabela com os detalhes de cada desconto    
