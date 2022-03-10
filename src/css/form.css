@@ -1,0 +1,111 @@
+.form {
+  display: flex;
+  justify-content: center;
+  /* margin-bottom: 80px; */
+}
+
+.addDecrese {
+  padding: 20px;
+  margin-right: 20px;
+  background-color: Transparent;
+  border: none;
+  Width: 26px;
+  Height: 26px 
+}
+
+.labelInput {
+  display:flow-root;
+  margin: 3 4 5 6
+  /* topo | direita | inferior | esquerda */
+
+}
+
+.formGroup {
+  margin: 10px 5px 
+}
+
+.help {
+  margin-top: 4px;
+  color: white;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  font-weight: 300;
+  font-size: 26px;
+  padding-top: 30px;
+}
+
+span {
+  text-align: center;
+  color: #71FFA0;
+  font-weight:bold;
+  font-size: 26px;
+}
+
+#calculateButtton {
+  width: 173px;
+  height: 67px;
+  border-radius: 50px;
+  margin-top: 25px;
+  margin-left: 30px;
+  color: black;
+  background: #71FFA0;
+}
+
+.retangle {
+width: 72px;
+height: 67px;
+color: black;
+background: #E5E2E9;
+border-radius: 50px 0px 0px 50px;
+
+}
+
+.coin{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #595066;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 18px;
+  margin-left: 7px;
+}
+
+.currencyInput {
+  display: flex;
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  border-radius: 50px;
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+
+}
+
+.input {
+  border-radius: 0px 50px 50px 0px;
+}
+
+#dependents {
+  width: 96px;
+  height: 67px;
+  border-radius: 50px;
+  text-align: center
+}
+
+.helpIcon {
+  margin-right: 6px;
+  margin-left: 10px;
+}
+
+#totalDiv {
+  display: flex;
+  justify-content: center;
+  /* padding-top: 80px */
+  
+}
