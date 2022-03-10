@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Header from '../components/Header'
 import InputContainer from '../components/InputContainer'
+import TotalContainer from '../components/TotalContainer'
 
 export default function Home() {
   return (
@@ -11,10 +11,7 @@ export default function Home() {
       </Head>
       <Header />
       <InputContainer />
-
-      <footer>
-        Footer
-      </footer>
+      <TotalContainer />
     </body>
   )
 }

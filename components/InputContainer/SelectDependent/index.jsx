@@ -4,7 +4,7 @@ import { AiOutlineQuestionCircle, AiOutlinePlusCircle, AiOutlineMinusCircle } fr
 export default function SelectDependent() {
   return (
     <div className="select__main">
-      <strong>Quantos depententes voce tem?</strong>
+      <strong>Quantos dependentes voce tem?</strong>
       <div className="select__group">
         <AiOutlineMinusCircle className="select__icon" />
 

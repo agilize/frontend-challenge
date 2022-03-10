@@ -1,0 +1,56 @@
+.total__container {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .total__title-resume {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    // left: 989px;
+    // top: 493px;
+
+    h1 {
+      font-family: $fontLight;
+      color: $branco;
+      font-size: 2rem;
+      // text spacing
+      letter-spacing: 1.2px;
+    }
+
+    .total__title-total {
+      position: relative;
+      text-align: center;
+      img {
+        width: 350px;
+        height: 130px;
+        margin-left: 1rem;
+      }
+
+      .total__title-totaltext {
+        display: flex;
+        align-items: center;
+
+        color: $btnColorPrimary;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h3 {
+          font-size: 1.5rem;
+          margin-right: 0.7rem;
+        }
+
+        h2 {
+          font-size: 3.2rem;
+        }
+        
+      }
+    }
+  }
+
+}
