@@ -4,14 +4,13 @@
   font-family: $fontRegular;
   font-size: 14px;
   margin: 0;
-  padding: 0;
 }
 
-body {
+.body {
+  padding-top: 2rem;
   width: auto;
   height: 1406px;
   background: linear-gradient(116.58deg, #5A2782 0%, #7A1F9A 29.33%, #4939A7 60.02%, #0B7FB0 79.47%);
-
 }
 
 // Importando fonts
@@ -22,8 +21,8 @@ body {
 
 // Estilos dos componentes InputContainer
 @import '../components/InputContainer/inputcontainer.scss';
-@import '../components/InputContainer/InputElement/input.scss';
-@import '../components/InputContainer/SelectDependent/select.scss';
+@import '../components/InputContainer/input.scss';
+@import '../components/InputContainer/select.scss';
 @import '../components/InputContainer/ButtonCalculator/button.scss';
 
 // Estilos dos componentes TotalContainer

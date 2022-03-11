@@ -1,11 +1,11 @@
 import '../styles/globals.scss'
-import SalaryProvider from '../contexts/SalaryContext';
+import SalaryWrapper from '../contexts/SalaryWrapper';
 
 function MyApp({ Component, pageProps }) {
   return (
-  <SalaryProvider>
+  <SalaryWrapper>
     <Component {...pageProps} />
-  </SalaryProvider>
+  </SalaryWrapper>
   )
 }
 

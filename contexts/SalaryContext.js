@@ -1,10 +1,5 @@
 import { createContext } from 'react';
 
-export const SalaryContext = createContext({});
+const SalaryContext = createContext(null);
 
-const SalaryProvider = ({ children }) => {
-  return <SalaryContext.Provider>{children}</SalaryContext.Provider>
-  
-};
-
-export default SalaryProvider;
+export default SalaryContext;

@@ -1,7 +1,21 @@
 
 import border from '../../public/imagens/border.png';
+import { useContext } from 'react';
+import SalaryContext from '../../contexts/SalaryContext';
 
 export default function TotalContainer() {
+  const {
+    salarioBruto,
+    porcentagemINSS,
+    porcentagemIRRF,
+    salarioLiquido,
+    valorINSS,
+    valorIRRF,
+    totalDesconto,
+  } = useContext(SalaryContext);
+ 
+  let salario = parseFloat(salarioBruto).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+
   return (
     <div className="total__container">
       <div className="total__title-resume">
@@ -10,7 +24,7 @@ export default function TotalContainer() {
           <img src={border.src} alt="" />
           <div className="total__title-totaltext">
             <h3>R$</h3>
-            <h2>2000</h2>
+            <h2>{salarioLiquido}</h2>
           </div>
         </div>
       </div>
@@ -20,29 +34,29 @@ export default function TotalContainer() {
         <div>
           <div>
             <p>Salário bruto</p>
-            <p>R$ 2.800,00</p>
+            {salario !== 'NaN' ? <p>R$ {salario}</p> : <p>R$ 0,00</p>}
           </div>
 
           <div>
-            <p>INSS(11%)</p>
+            <p>INSS({porcentagemINSS}%)</p>
 
-            <p>R$ 2.800,00</p>
+            <p>R$ {valorINSS}</p>
           </div>
 
           <div>
-            <p>IRRF(27.50%)</p>
-            <p>R$ 2.800,00</p>
+            <p>IRRF({porcentagemIRRF}%)</p>
+            <p>R$ {valorIRRF}</p>
           </div>
 
           <div>
             <p>Outros descontos</p>
-            <p>R$ 2.800,00</p>
+            <p>R$ {totalDesconto}</p>
           </div>
           <hr />
 
           <div>
             <p>Salário líquido</p>
-            <p>R$ 2.800,00</p>
+            <p>R$ {salarioLiquido}</p>
           </div>
         </div>
       </div>
