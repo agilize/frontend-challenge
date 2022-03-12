@@ -1,8 +1,13 @@
 import React from 'react';
+import Header from './components/Header';
 import { Base } from './styles';
 
 function App() {
-  return <Base>Agilize</Base>;
+  return (
+    <Base>
+      <Header />
+    </Base>
+  );
 }
 
 export default App;
