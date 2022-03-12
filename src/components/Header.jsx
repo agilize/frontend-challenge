@@ -3,11 +3,11 @@ import Logo from '../images/logo.svg';
 
 function Header() {
   return (
-    <header>
-      <object type='image/svg+xml' data={Logo}>
+    <header className='flex flex-col'>
+      <object height='50px' className='m-10' type='image/svg+xml' data={Logo}>
         Logo da Agilize
       </object>
-      <h1>Calculadora de salário líquido</h1>
+      <h1 className='font-semibold text-4xl'>Calculadora de salário líquido</h1>
     </header>
   );
 }
