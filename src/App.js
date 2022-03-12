@@ -1,7 +1,8 @@
 import React from 'react';
+import { Base } from './styles';
 
 function App() {
-  return <h1>Agilize</h1>;
+  return <Base>Agilize</Base>;
 }
 
 export default App;
