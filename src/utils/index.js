@@ -22,3 +22,33 @@ export const convertToReal = (value) => {
     minimumFractionDigits: 2,
   }).format(value);
 };
+
+export const INSSrate = (value) => {
+  switch (false) {
+    case value <= 1212:
+      return 0.075;
+    case value <= 2427.35:
+      return 0.09;
+    case value <= 3641.03:
+      return 0.12;
+    case value <= 7087.22:
+      return 0.14;
+    default:
+      return 0;
+  }
+};
+
+export const IRRFrate = (value) => {
+  switch (false) {
+    case value <= 1903.98:
+      return { aliquot: 0, deduction: 0 };
+    case value <= 2826.65:
+      return { aliquot: 0.075, deduction: 142.8 };
+    case value <= 3751.05:
+      return { aliquot: 0.15, deduction: 354.8 };
+    case value < 4664.68:
+      return { aliquot: 0.225, deduction: 636.13 };
+    default:
+      return { aliquot: 0.275, deduction: 869.36 };
+  }
+};
