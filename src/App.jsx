@@ -1,7 +1,7 @@
 import React from 'react';
-import CalculationForm from './components/CalculationForm';
-import Header from './components/Header';
-import { Base } from './styles';
+import CalculationForm from './modules/CalculationForm';
+import Header from './modules/Header';
+import { Base } from './styles/Base.js';
 
 function App() {
   return (
