@@ -23,14 +23,20 @@ function CalculationForm() {
       </fieldset>
       <fieldset>
         <p>Quantos dependentes você tem?</p>
-        <button type='button'>+</button>
-        <input type='text' />
-        <button type='button'>-</button>
+        <button type='button' data-testid='dependents-number-add'>
+          +
+        </button>
+        <input type='text' data-testid='dependents-number-input' />
+        <button type='button' data-testid='dependents-number-remove'>
+          -
+        </button>
         <p>
           <span>?</span>Dependentes declarados no Imposto de Renda
         </p>
       </fieldset>
-      <button type='submit'>CALCULAR</button>
+      <button type='submit' data-testid='submit-button'>
+        CALCULAR
+      </button>
     </form>
   );
 }
