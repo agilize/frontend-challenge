@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CurrencyInput from './CurrencyInput';
 
 function CalculationForm() {
   const [dependentsNumb, updateDependentsNumb] = useState(0);
@@ -21,7 +22,7 @@ function CalculationForm() {
         <label>
           <p>Qual seu salário bruto?</p>
           <span>R$</span>
-          <input type='text' data-testid='gross-salary-input' />
+          <CurrencyInput testId='gross-salary-input' />
           <p>
             <span>?</span>Salário bruto sem descontos
           </p>
@@ -29,7 +30,7 @@ function CalculationForm() {
         <label>
           <p>Total de descontos</p>
           <span>R$</span>
-          <input type='text' data-testid='total-discount-input' />
+          <CurrencyInput testId='total-discount-input' />
           <p>
             <span>?</span>Pensão alimentícia, plano de saúde...
           </p>
