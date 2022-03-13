@@ -15,7 +15,7 @@ function CalculationForm() {
         <label>
           <p>Total de descontos</p>
           <span>R$</span>
-          <input type='text' />
+          <input type='text' data-testid='total-discount-input' />
           <p>
             <span>?</span>Pensão alimentícia, plano de saúde...
           </p>
