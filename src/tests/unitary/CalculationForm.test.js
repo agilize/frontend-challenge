@@ -24,7 +24,7 @@ describe('CalculationForm', () => {
     it('Should auto format the value', () => {
       const { getByTestId } = render(<CalculationForm />);
       const input = getByTestId('gross-salary-input');
-      const inputValues = ['0', '24', '3', '0'];
+      const inputValues = ['0', '24', '243', '2430'];
       const resultsValues = [defaultValue, '0,24', '2,43', '24,30'];
       inputValues.forEach((inputValue, index) => {
         fireEvent.change(input, { target: { value: inputValue } });
@@ -53,7 +53,7 @@ describe('CalculationForm', () => {
       it('Should auto format the value', () => {
         const { getByTestId } = render(<CalculationForm />);
         const input = getByTestId('total-discount-input');
-        const inputValues = ['0', '24', '3', '0'];
+        const inputValues = ['0', '24', '243', '2430'];
         const resultsValues = [defaultValue, '0,24', '2,43', '24,30'];
         inputValues.forEach((inputValue, index) => {
           fireEvent.change(input, { target: { value: inputValue } });
