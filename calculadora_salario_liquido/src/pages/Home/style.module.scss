@@ -1,0 +1,39 @@
+.container {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.8rem;
+
+  .logoContainer {
+    padding: 1rem 0 3.6rem 0;
+    .logo {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .title {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 3.5rem;
+    text-align: center;
+  }
+
+  .form {
+    margin: 3.75rem 0 4.375rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .form {
+      margin: 3.75rem 0 4.375rem 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      place-items: center;
+      gap: 40px 0;
+    }
+  }
+}

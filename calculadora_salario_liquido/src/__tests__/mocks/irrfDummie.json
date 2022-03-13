@@ -1,0 +1,114 @@
+{
+  "firstRange": [
+    {
+      "salary": 1903.98,
+      "discount": 0,
+      "dependents": 0,
+      "INSSdiscount": 153.17
+    }
+  ],
+  "secondRange": [
+    {
+      "salary": 2826.65,
+      "discount": 0,
+      "dependents": 0,
+      "INSSdiscount": 182.05
+    },
+    {
+      "salary": 2826.65,
+      "discount": 200,
+      "dependents": 0,
+      "INSSdiscount": 182.05
+    },
+    {
+      "salary": 2826.65,
+      "discount": 0,
+      "dependents": 1,
+      "INSSdiscount": 182.05
+    },
+    {
+      "salary": 2826.65,
+      "discount": 200,
+      "dependents": 1,
+      "INSSdiscount": 182.05
+    }
+  ],
+  "thirdRange": [
+    {
+      "salary": 3751.05,
+      "discount": 0,
+      "dependents": 0,
+      "INSSdiscount": 361.32
+    },
+    {
+      "salary": 3751.05,
+      "discount": 200,
+      "dependents": 0,
+      "INSSdiscount": 361.32
+    },
+    {
+      "salary": 3751.05,
+      "discount": 0,
+      "dependents": 1,
+      "INSSdiscount": 361.32
+    },
+    {
+      "salary": 3751.05,
+      "discount": 200,
+      "dependents": 1,
+      "INSSdiscount": 361.32
+    }
+  ],
+  "fourthRange": [
+    {
+      "salary": 4664.68,
+      "discount": 0,
+      "dependents": 0,
+      "INSSdiscount": 489.23
+    },
+    {
+      "salary": 4664.68,
+      "discount": 200,
+      "dependents": 0,
+      "INSSdiscount": 489.23
+    },
+    {
+      "salary": 4664.68,
+      "discount": 0,
+      "dependents": 1,
+      "INSSdiscount": 489.23
+    },
+    {
+      "salary": 4664.68,
+      "discount": 200,
+      "dependents": 1,
+      "INSSdiscount": 489.23
+    }
+  ],
+  "fifthRange": [
+    {
+      "salary": 6500,
+      "discount": 0,
+      "dependents": 0,
+      "INSSdiscount": 746.17
+    },
+    {
+      "salary": 6500,
+      "discount": 200,
+      "dependents": 0,
+      "INSSdiscount": 746.17
+    },
+    {
+      "salary": 6500,
+      "discount": 0,
+      "dependents": 1,
+      "INSSdiscount": 746.17
+    },
+    {
+      "salary": 6500,
+      "discount": 200,
+      "dependents": 1,
+      "INSSdiscount": 746.17
+    }
+  ]
+}

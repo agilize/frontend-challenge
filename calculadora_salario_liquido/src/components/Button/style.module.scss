@@ -1,0 +1,15 @@
+.button {
+  width: 173px;
+  height: 67px;
+  border: none;
+  background: var(--green);
+  border-radius: 50px;
+  cursor: pointer;
+
+  strong {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+    text-align: center;
+  }
+}
