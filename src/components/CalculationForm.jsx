@@ -7,7 +7,7 @@ function CalculationForm() {
         <label>
           <p>Qual seu salário bruto?</p>
           <span>R$</span>
-          <input type='text' />
+          <input type='text' data-testid='gross-salary-input' />
           <p>
             <span>?</span>Salário bruto sem descontos
           </p>
@@ -25,7 +25,7 @@ function CalculationForm() {
         <p>Quantos dependentes você tem?</p>
         <button type='button'>+</button>
         <input type='text' />
-        <button type='button'>+</button>
+        <button type='button'>-</button>
         <p>
           <span>?</span>Dependentes declarados no Imposto de Renda
         </p>
