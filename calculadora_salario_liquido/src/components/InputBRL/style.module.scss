@@ -1,0 +1,82 @@
+.formControl {
+  display: flex;
+  flex-direction: column;
+
+  .questionText {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: left;
+  }
+
+  .inputContainer {
+    margin: 15px 0 13px 0;
+    width: 242px;
+    height: 67px;
+    background: var(--white);
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+    padding-left: 72px;
+
+    .currency {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: grid;
+      place-items: center;
+      height: 100%;
+      width: 72px;
+      background: var(--gray-300);
+
+      span {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28px;
+        text-align: center;
+        color: var(--gray-800);
+        display: inline-block;
+        margin: 0 auto;
+      }
+    }
+
+    input {
+      padding-left: 16px;
+      height: 100%;
+      border: none;
+      max-width: 170px;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 28px;
+      text-align: left;
+      color: var(--gray-800);
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .infoText {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-left: 6px;
+    };
+  }
+
+  @media only screen and (max-width: 1200px) {
+    width: 354px;
+    display: flex;
+    align-items: center;
+  }
+
+  @media only screen and (max-width: 440px) {
+    width: 100%;
+  }
+}

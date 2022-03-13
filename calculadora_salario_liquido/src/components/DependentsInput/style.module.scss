@@ -1,0 +1,61 @@
+.formControl {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+
+  .questionText {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: center;
+  }
+
+  .inputControl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input {
+      height: 67px;
+      width: 96px;
+      border-radius: 50px;
+      border: none;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 28px;
+      text-align: center;
+      margin: 15px 18px 13px 18px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      width: 26px;
+      height: 26px;
+
+      svg {
+        color: var(--white);
+        transform: scale(1.8);
+      }
+    }
+  }
+  .infoText {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-left: 6px;
+    };
+  }
+
+  @media only screen and (max-width: 1200px) {
+    align-items: center;
+  }
+}
