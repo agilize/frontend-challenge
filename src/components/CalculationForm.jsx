@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function CalculationForm() {
+  const [dependentsNumb, updateDependentsNumb] = useState(0);
+  const updateDependents = (value) => {
+    const number = parseInt(value);
+    if (Number.isNaN(number)) {
+      updateDependentsNumb(0);
+    } else {
+      updateDependentsNumb(parseInt(value));
+    }
+  };
+  const addDependent = () => updateDependentsNumb(dependentsNumb + 1);
+  const removeDependent = () => {
+    if (dependentsNumb >= 1) updateDependentsNumb(dependentsNumb - 1);
+  };
+
   return (
     <form>
       <fieldset>
@@ -23,11 +37,24 @@ function CalculationForm() {
       </fieldset>
       <fieldset>
         <p>Quantos dependentes você tem?</p>
-        <button type='button' data-testid='dependents-number-add'>
+        <button
+          type='button'
+          data-testid='dependents-number-add'
+          onClick={() => addDependent()}
+        >
           +
         </button>
-        <input type='text' data-testid='dependents-number-input' />
-        <button type='button' data-testid='dependents-number-remove'>
+        <input
+          type='text'
+          data-testid='dependents-number-input'
+          value={dependentsNumb}
+          onChange={({ target }) => updateDependents(target.value)}
+        />
+        <button
+          type='button'
+          data-testid='dependents-number-remove'
+          onClick={() => removeDependent()}
+        >
           -
         </button>
         <p>

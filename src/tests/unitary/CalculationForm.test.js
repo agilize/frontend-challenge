@@ -1,8 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, cleanup } from '@testing-library/react';
 import CalculationForm from '../../components/CalculationForm';
 
+afterEach(cleanup);
 describe('CalculationForm', () => {
   const { getByTestId } = render(<CalculationForm />);
   describe('Gloss Salary input', () => {
@@ -52,36 +53,42 @@ describe('CalculationForm', () => {
     });
   });
   describe('Dependents number', () => {
-    const input = getByTestId('dependents-number-input');
-    const addButton = getByTestId('dependents-number-add');
-    const removeButton = getByTestId('dependents-number-remove');
     const defaultValue = '0';
-    beforeEach(() =>
-      fireEvent.change(input, { target: { value: defaultValue } })
-    );
     it(`Should start with ${defaultValue}`, () => {
-      expect(input.value).toBe(defaultValue);
+      const { getByTestId } = render(<CalculationForm />);
+      expect(getByTestId('dependents-number-input').value).toBe(defaultValue);
     });
     it(`Shouldn't accept letters`, () => {
+      const { getByTestId } = render(<CalculationForm />);
       const inputValues = ['m', 'te', 's', 'g'];
       inputValues.forEach((inputValue) => {
-        fireEvent.change(input, { target: { value: inputValue } });
-        expect(input.value).toBe(defaultValue);
+        fireEvent.change(getByTestId('dependents-number-input'), {
+          target: { value: inputValue },
+        });
+        expect(getByTestId('dependents-number-input').value).toBe(defaultValue);
       });
     });
     it('Should add values directly through the input', () => {
-      fireEvent.change(input, { target: { value: 10 } });
-      expect(input.value).toBe('10');
+      const { getByTestId } = render(<CalculationForm />);
+      fireEvent.change(getByTestId('dependents-number-input'), {
+        target: { value: 10 },
+      });
+      expect(getByTestId('dependents-number-input').value).toBe('10');
     });
     it('Should add to 1 by clicking on the +', () => {
+      const { getByTestId } = render(<CalculationForm />);
+      const addButton = getByTestId('dependents-number-add');
       fireEvent.click(addButton);
-      expect(input.value).toBe('1');
+      expect(getByTestId('dependents-number-input').value).toBe('1');
     });
     it('Should remove 1 by clicking -', () => {
+      const { getByTestId } = render(<CalculationForm />);
+      const addButton = getByTestId('dependents-number-add');
       fireEvent.click(addButton);
-      expect(input.value).toBe('1');
+      expect(getByTestId('dependents-number-input').value).toBe('1');
+      const removeButton = getByTestId('dependents-number-remove');
       fireEvent.click(removeButton);
-      expect(input.value).toBe(defaultValue);
+      expect(getByTestId('dependents-number-input').value).toBe(defaultValue);
     });
   });
 });
