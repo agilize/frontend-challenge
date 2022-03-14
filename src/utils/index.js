@@ -23,6 +23,11 @@ export const convertToReal = (value) => {
   }).format(value);
 };
 
+/**
+ * From the received amount, it returns the rate based on the INSS table 13/03/2022
+ * @param {number} value
+ * @returns {number}
+ */
 export const INSSrate = (value) => {
   switch (false) {
     case value <= 1212:
@@ -38,6 +43,11 @@ export const INSSrate = (value) => {
   }
 };
 
+/**
+ * From the amount received returns the rate and deduction based on the IRRF table 13/03/2022
+ * @param {number} value 2826.65
+ * @returns {object} { aliquot: 0.075, deduction: 142.8 }
+ */
 export const IRRFrate = (value) => {
   switch (false) {
     case value <= 1903.98:

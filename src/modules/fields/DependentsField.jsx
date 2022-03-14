@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import MoreInfos from './components/MoreInfos';
 import PlusCircle from '../../images/plus-circle.png';
 import MinusCircle from '../../images/minus-circle.png';
 import { DependentesInput } from '../../styles/CalculationForm';
+import Context from '../../context';
 
 const DependentsField = () => {
-  const [dependentsNumb, updateDependentsNumb] = useState(0);
+  const { dependents, setDependents } = useContext(Context);
   const updateDependents = (value) => {
     if (value.length < 5) {
       const number = parseInt(value);
       if (Number.isNaN(number)) {
-        updateDependentsNumb(0);
+        setDependents(0);
       } else {
-        updateDependentsNumb(parseInt(value));
+        setDependents(parseInt(value));
       }
     }
   };
   const addDependent = () => {
-    if (`${dependentsNumb}`.length < 5)
-      updateDependentsNumb(dependentsNumb + 1);
+    if (`${dependents}`.length < 5) setDependents(dependents + 1);
   };
   const removeDependent = () => {
-    if (dependentsNumb >= 1) updateDependentsNumb(dependentsNumb - 1);
+    if (dependents >= 1) setDependents(dependents - 1);
   };
   return (
     <fieldset>
@@ -37,7 +37,7 @@ const DependentsField = () => {
         <DependentesInput
           type='text'
           data-testid='dependents-number-input'
-          value={dependentsNumb}
+          value={dependents}
           onChange={({ target }) => updateDependents(target.value)}
         />
         <button
