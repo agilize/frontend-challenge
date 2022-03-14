@@ -23,15 +23,16 @@ describe('Perform calculation correctly', () => {
     const netSalaries = [
       '925,00',
       '1.838,18',
-      '2.668,98',
-      '3.418,05',
-      '4.095,59',
+      '2.731,00',
+      '3.603,82',
+      '4.463,82',
     ];
     grossSalaries.forEach((salary, index) => {
       it(`Salary of R$${salary}`, () => {
         const { getByTestId } = render(<App />);
         const inputSalary = getByTestId('gross-salary-input');
         fireEvent.change(inputSalary, { target: { value: salary } });
+        fireEvent.click(getByTestId('submit-button'));
         expect(getByTestId('calc-result-value').innerHTML).toEqual(
           netSalaries[index]
         );
@@ -42,9 +43,9 @@ describe('Perform calculation correctly', () => {
     const netSalaries = [
       '825,00',
       '1.638,18',
-      '2.368,98',
-      '3.018,05',
-      '3.595,59',
+      '2.431,00',
+      '3.203,82',
+      '3.963,82',
     ];
     grossSalaries.forEach((salary, index) => {
       it(`Salary of R$${salary} and discount of R$${discounts[index]}`, () => {
@@ -55,6 +56,7 @@ describe('Perform calculation correctly', () => {
         fireEvent.change(inputDiscount, {
           target: { value: discounts[index] },
         });
+        fireEvent.click(getByTestId('submit-button'));
         expect(getByTestId('calc-result-value').innerHTML).toEqual(
           netSalaries[index]
         );
@@ -65,12 +67,12 @@ describe('Perform calculation correctly', () => {
     const netSalaries = [
       '825,00',
       '1.638,18',
-      '2.411,63',
-      '3.131,80',
-      '3.808,88',
+      '2.461,47',
+      '3.203,82',
+      '3.963,82',
     ];
     grossSalaries.forEach((salary, index) => {
-      it(`Salary of R$${salary}, discount of R$${discounts[index]} and ${dependentes[index]} dependentes`, () => {
+      it(`Salary of R$${salary}, discount of R$${discounts[index]} and ${dependentes[index]} dependents`, () => {
         const { getByTestId } = render(<App />);
         const inputSalary = getByTestId('gross-salary-input');
         const inputDiscount = getByTestId('total-discount-input');
@@ -82,6 +84,7 @@ describe('Perform calculation correctly', () => {
           target: { value: dependentes[index] },
         });
         fireEvent.change(inputSalary, { target: { value: salary } });
+        fireEvent.click(getByTestId('submit-button'));
         expect(getByTestId('calc-result-value').innerHTML).toEqual(
           netSalaries[index]
         );

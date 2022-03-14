@@ -7,15 +7,18 @@ import Context from './context';
 
 function App() {
   const [glossSalary, setGlossSalary] = useState(0);
+  const [netSalary, setNetSalary] = useState(0);
   const [discount, setDiscount] = useState(0);
   const [dependents, setDependents] = useState(0);
   const contextValue = {
     setGlossSalary,
     setDiscount,
     setDependents,
+    setNetSalary,
     dependents,
     discount,
     glossSalary,
+    netSalary,
   };
   return (
     <Context.Provider value={contextValue}>

@@ -1,4 +1,5 @@
 export const removeLetters = (string) => string.replace(/\D/g, '');
+export const twoDecimals = (number) => Math.round(number * 100) / 100;
 
 /**
  * Add a cent separator to a common value
@@ -24,41 +25,56 @@ export const convertToReal = (value) => {
 };
 
 /**
- * From the received amount, it returns the rate based on the INSS table 13/03/2022
- * @param {number} value
+ * Returns the salary with the INSS reduction
+ * @param {number} glossSalary
  * @returns {number}
  */
-export const INSSrate = (value) => {
-  switch (false) {
-    case value <= 1212:
-      return 0.075;
-    case value <= 2427.35:
-      return 0.09;
-    case value <= 3641.03:
-      return 0.12;
-    case value <= 7087.22:
-      return 0.14;
+export const deductsINSS = (glossSalary) => {
+  switch (true) {
+    case glossSalary <= 1212:
+      return twoDecimals(glossSalary - glossSalary * 0.075);
+    case glossSalary <= 2427.35:
+      return twoDecimals(glossSalary - (90.9 + (glossSalary - 1212) * 0.09));
+    case glossSalary <= 3641.03:
+      return twoDecimals(
+        glossSalary - (200.28 + (glossSalary - 2427.35) * 0.12)
+      );
+    case glossSalary <= 7087.22:
+      return twoDecimals(
+        glossSalary - (345.92 + (glossSalary - 3641.03) * 0.14)
+      );
     default:
-      return 0;
+      return 828.38;
   }
 };
 
 /**
- * From the amount received returns the rate and deduction based on the IRRF table 13/03/2022
- * @param {number} value 2826.65
- * @returns {object} { aliquot: 0.075, deduction: 142.8 }
+ * Returns the salary with the IRRF reduction
+ * @param {number} glossSalary
+ * @param {number} netSalary
+ * @param {number} dependents
+ * @returns {number}
  */
-export const IRRFrate = (value) => {
-  switch (false) {
-    case value <= 1903.98:
-      return { aliquot: 0, deduction: 0 };
-    case value <= 2826.65:
-      return { aliquot: 0.075, deduction: 142.8 };
-    case value <= 3751.05:
-      return { aliquot: 0.15, deduction: 354.8 };
-    case value < 4664.68:
-      return { aliquot: 0.225, deduction: 636.13 };
+export const deductsIRRF = (glossSalary, netSalary, dependents) => {
+  const deductsDependents = 189.59 * dependents;
+  switch (true) {
+    case glossSalary <= 2073:
+      return twoDecimals(netSalary);
+    case glossSalary - (glossSalary <= 2826.65):
+      return twoDecimals(
+        netSalary - ((netSalary - deductsDependents) * 0.075 - 142.8)
+      );
+    case glossSalary <= 3751.05:
+      return twoDecimals(
+        netSalary - ((netSalary - deductsDependents) * 0.15 - 354.8)
+      );
+    case glossSalary <= 4664.68:
+      return twoDecimals(
+        netSalary - ((netSalary - deductsDependents) * 0.225 - 636.13)
+      );
     default:
-      return { aliquot: 0.275, deduction: 869.36 };
+      return twoDecimals(
+        netSalary - ((netSalary - deductsDependents) * 0.275 - 869.36)
+      );
   }
 };
