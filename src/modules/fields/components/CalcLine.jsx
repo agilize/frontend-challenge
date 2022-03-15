@@ -6,7 +6,7 @@ const CalcLine = ({ value, title }) => {
   return (
     <div>
       <p>{title}</p>
-      <p>{convertToReal(value)}</p>
+      <p>{`R$${convertToReal(value)}`}</p>
     </div>
   );
 };

@@ -1,23 +1,32 @@
 import React, { useContext } from 'react';
 import Context from '../context';
 import { CalculateButton } from '../styles/CalculationForm';
-import { deductsINSS, deductsIRRF, twoDecimals } from '../utils';
+import { deductsINSS, deductsIRRF } from '../utils';
 import DependentsField from './fields/DependentsField';
 import ValuesField from './fields/ValuesField';
 
 function CalculationForm() {
-  const { dependents, discount, glossSalary, setNetSalary } =
+  const { dependents, discount, glossSalary, setCalcInfos } =
     useContext(Context);
+
   const calculatesNetSalary = () => {
-    const INSSDeduction = deductsINSS(glossSalary) - discount;
-    console.log(glossSalary - INSSDeduction);
-    const IRRFDeduction = deductsIRRF(glossSalary, INSSDeduction, dependents);
-    console.log(glossSalary - IRRFDeduction);
-    if (IRRFDeduction < INSSDeduction) {
-      setNetSalary(twoDecimals(IRRFDeduction));
-    } else {
-      setNetSalary(twoDecimals(INSSDeduction));
-    }
+    const INSSDiscount = deductsINSS(glossSalary);
+
+    let netSalary = glossSalary - INSSDiscount - discount;
+
+    const IRRFDiscount = deductsIRRF(glossSalary, netSalary, dependents);
+
+    netSalary = IRRFDiscount > 0 ? netSalary - IRRFDiscount : netSalary;
+
+    const calcInfos = {
+      glossSalary,
+      discount,
+      INSSDiscount,
+      IRRFDiscount,
+      netSalary,
+    };
+
+    setCalcInfos(calcInfos);
   };
 
   return (

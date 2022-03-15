@@ -6,21 +6,31 @@ import { Base } from './styles/Base.js';
 import Context from './context';
 import CalcDetails from './modules/CalcDetails';
 
+const defaultCalcInfos = {
+  glossSalary: 0,
+  discount: 0,
+  INSSDiscount: 0,
+  IRRFDiscount: 0,
+  netSalary: 0,
+};
+
 function App() {
   const [glossSalary, setGlossSalary] = useState(0);
-  const [netSalary, setNetSalary] = useState(0);
   const [discount, setDiscount] = useState(0);
   const [dependents, setDependents] = useState(0);
+  const [calcInfos, setCalcInfos] = useState(defaultCalcInfos);
+
   const contextValue = {
     setGlossSalary,
     setDiscount,
     setDependents,
-    setNetSalary,
+    setCalcInfos,
     dependents,
     discount,
     glossSalary,
-    netSalary,
+    calcInfos,
   };
+
   return (
     <Context.Provider value={contextValue}>
       <Base>
