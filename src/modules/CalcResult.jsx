@@ -3,7 +3,9 @@ import Context from '../context';
 import { convertToReal } from '../utils';
 
 const CalcResult = () => {
-  const { netSalary } = useContext(Context);
+  const {
+    calcInfos: { netSalary },
+  } = useContext(Context);
   const convertedSalary = convertToReal(`${netSalary}`);
   return (
     <div className='flex items-center'>

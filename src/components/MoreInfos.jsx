@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Interrogation from '../../../images/interrogation.svg';
+import Interrogation from '../images/interrogation.svg';
 
 const MoreInfos = ({ children }) => {
   return (

@@ -1,12 +1,8 @@
 import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
-import { RealInput, RealSymbol } from '../../../styles/CalculationForm';
-import {
-  removeLetters,
-  addCentsSeparator,
-  convertToReal,
-} from '../../../utils';
-import Context from '../../../context';
+import { RealInput, RealSymbol } from '../styles/CalculationForm';
+import { removeLetters, addCentsSeparator, convertToReal } from '../utils';
+import Context from '../context';
 
 const invalidValues = ['', '0', '00', '000', '0000'];
 
