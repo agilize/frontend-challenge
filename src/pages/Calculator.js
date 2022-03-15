@@ -1,38 +1,15 @@
 import React, { useContext, useState } from 'react';
 import AppContext from '../context/AppContext';
-import CalculatorInputs from './Inputs';
+import CalculatorInputs from '../components/Inputs';
+import Table from '../components/Table';
 
 function Calculator() {
   const [renderTable, setRenderTable] = useState(false);
-  const { 
-    calculateEarnings,
-    bruteSalary,
-    totalDiscounts,
-    dependentsNumber,
+  const {
     setBruteSalary,
     setTotalDiscounts,
     setDependentsNumber
   } = useContext(AppContext);
-  
-  const inssPercentage = calculateEarnings.percentageInss(bruteSalary);
-
-  const INSS = calculateEarnings.calculateInss(bruteSalary, inssPercentage);
-
-  const { aliquot, deductiblePortion } = calculateEarnings.percentageIrrf(bruteSalary);
-
-  const IRRF = calculateEarnings.calculateIrrf({
-    bruteSalary,
-    INSS,
-    aliquot,
-    deductiblePortion
-  }, dependentsNumber);
-
-  const liquidSalary = calculateEarnings.calculateLiquidSalary({
-    bruteSalary,
-    INSS,
-    IRRF,
-    totalDiscounts,
-  });
 
   function clearInputValues() {
     setBruteSalary(0.00);
@@ -48,6 +25,10 @@ function Calculator() {
       <CalculatorInputs name="dependentsNumber" />
       <button onClick={() => setRenderTable(true) }>Calcular</button>
       <button onClick={ clearInputValues }>Limpar</button>
+      {
+        renderTable &&
+        <Table />
+      }
     </div>
   )
 };

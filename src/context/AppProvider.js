@@ -50,7 +50,6 @@ function AppProvider({ children }) {
 
     calculateIrrf: (deduction, dependents = 0) => {
       const { bruteSalary, INSS, aliquot, deductiblePortion} = deduction;
-      console.log('dependentes', dependents)
       if (dependents === 0 || dependents === "") {
         return (
           (bruteSalary - INSS) * aliquot/100 - deductiblePortion

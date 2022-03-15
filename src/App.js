@@ -1,6 +1,5 @@
-import Calculator from "./components/Calculator";
-import Input from "./components/Inputs";
 import AppProvider from "./context/AppProvider";
+import Calculator from "./pages/Calculator";
 
 function App() {
   return (
