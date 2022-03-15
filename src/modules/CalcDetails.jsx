@@ -18,7 +18,7 @@ const CalcDetails = () => {
 
   return (
     <div>
-      <h3 className='text-center'>Como o cálculo é feito?</h3>
+      <h3 className='mb-6 text-center'>Como o cálculo é feito?</h3>
       <div className='border-b'>
         <CalcLine
           value={`R$${convertToReal(glossSalary)}`}
