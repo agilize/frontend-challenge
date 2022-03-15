@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import Context from '../context';
 import { CalculateButton } from '../styles/CalculationForm';
 import { deductsINSS, deductsIRRF } from '../utils';
-import DependentsField from './fields/DependentsField';
-import ValuesField from './fields/ValuesField';
+import DependentsField from '../fields/DependentsField';
+import ValuesField from '../fields/ValuesField';
 
 function CalculationForm() {
   const { dependents, discount, glossSalary, setCalcInfos } =

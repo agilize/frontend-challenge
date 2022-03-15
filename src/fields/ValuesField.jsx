@@ -1,6 +1,6 @@
 import React from 'react';
-import MoreInfos from './components/MoreInfos';
-import ValueInput from './components/ValueInput';
+import MoreInfos from '../components/MoreInfos';
+import ValueInput from '../components/ValueInput';
 
 const ValuesField = () => {
   return (

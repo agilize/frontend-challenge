@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Context from '../context';
 import { convertToReal } from '../utils';
-import CalcLine from './fields/components/CalcLine';
+import CalcLine from '../components/CalcLine';
 
 const CalcDetails = () => {
   const {

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import MoreInfos from './components/MoreInfos';
-import PlusCircle from '../../images/plus-circle.png';
-import MinusCircle from '../../images/minus-circle.png';
-import { DependentesInput } from '../../styles/CalculationForm';
-import Context from '../../context';
+import MoreInfos from '../components/MoreInfos';
+import PlusCircle from '../images/plus-circle.png';
+import MinusCircle from '../images/minus-circle.png';
+import { DependentesInput } from '../styles/CalculationForm';
+import Context from '../context';
 
 const DependentsField = () => {
   const { dependents, setDependents } = useContext(Context);
