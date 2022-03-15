@@ -9,12 +9,14 @@ function CalculationForm() {
   const { dependents, discount, glossSalary, setNetSalary } =
     useContext(Context);
   const calculatesNetSalary = () => {
-    const INSSDeduction = deductsINSS(glossSalary);
+    const INSSDeduction = deductsINSS(glossSalary) - discount;
+    console.log(glossSalary - INSSDeduction);
     const IRRFDeduction = deductsIRRF(glossSalary, INSSDeduction, dependents);
-    if (IRRFDeduction > INSSDeduction) {
-      setNetSalary(twoDecimals(IRRFDeduction - discount));
+    console.log(glossSalary - IRRFDeduction);
+    if (IRRFDeduction < INSSDeduction) {
+      setNetSalary(twoDecimals(IRRFDeduction));
     } else {
-      setNetSalary(twoDecimals(INSSDeduction - discount));
+      setNetSalary(twoDecimals(INSSDeduction));
     }
   };
 

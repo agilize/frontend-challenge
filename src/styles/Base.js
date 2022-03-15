@@ -1,15 +1,9 @@
-import styled from 'styled-components';
+import tw from 'tailwind-styled-components';
 
-export const Base = styled.div`
-  background: linear-gradient(
-    116.58deg,
-    #5a2782 0%,
-    #7a1f9a 29.33%,
-    #4939a7 60.02%,
-    #0b7fb0 79.47%
-  );
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+export const Base = tw.div`
+  bg-gradient
+  h-screen
+  flex
+  flex-col
+  items-center
 `;

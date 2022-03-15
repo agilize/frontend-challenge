@@ -44,7 +44,7 @@ export const deductsINSS = (glossSalary) => {
         glossSalary - (345.92 + (glossSalary - 3641.03) * 0.14)
       );
     default:
-      return 828.38;
+      return glossSalary - 828.38;
   }
 };
 
@@ -58,21 +58,22 @@ export const deductsINSS = (glossSalary) => {
 export const deductsIRRF = (glossSalary, netSalary, dependents) => {
   const deductsDependents = 189.59 * dependents;
   switch (true) {
-    case glossSalary <= 2073:
+    case glossSalary - deductsDependents <= 2073:
       return twoDecimals(netSalary);
-    case glossSalary - (glossSalary <= 2826.65):
+    case glossSalary - deductsDependents <= 2826.65:
       return twoDecimals(
         netSalary - ((netSalary - deductsDependents) * 0.075 - 142.8)
       );
-    case glossSalary <= 3751.05:
+    case glossSalary - deductsDependents <= 3751.05:
       return twoDecimals(
         netSalary - ((netSalary - deductsDependents) * 0.15 - 354.8)
       );
-    case glossSalary <= 4664.68:
+    case glossSalary - deductsDependents <= 4664.68:
       return twoDecimals(
         netSalary - ((netSalary - deductsDependents) * 0.225 - 636.13)
       );
     default:
+      console.log('teste');
       return twoDecimals(
         netSalary - ((netSalary - deductsDependents) * 0.275 - 869.36)
       );

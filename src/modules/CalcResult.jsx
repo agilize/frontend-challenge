@@ -6,11 +6,20 @@ const CalcResult = () => {
   const { netSalary } = useContext(Context);
   const convertedSalary = convertToReal(`${netSalary}`);
   return (
-    <div>
-      <h2 data-testid='calc-result-title'>Seu salário líquido será</h2>
-      <div>
-        <span data-testid='calc-result-symbol'>R$</span>
-        <span data-testid='calc-result-value'>{convertedSalary}</span>
+    <div className='flex items-center'>
+      <h2 data-testid='calc-result-title' className='mr-2 text-3xl'>
+        Seu salário líquido será
+      </h2>
+      <div className='flex items-center p-20 bg-circle'>
+        <p data-testid='calc-result-symbol' className='text-l'>
+          R$
+        </p>
+        <p
+          data-testid='calc-result-value'
+          className='ml-2 text-4xl text-calculateGreen'
+        >
+          {convertedSalary}
+        </p>
       </div>
     </div>
   );
