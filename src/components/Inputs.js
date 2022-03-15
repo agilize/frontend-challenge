@@ -2,7 +2,15 @@ import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 
 function CalculatorInputs(props) {
-  const { setBruteSalary, setTotalDiscounts, dependentsNumber, setDependentsNumber } = useContext(AppContext);
+  const {
+    setBruteSalary,
+    setTotalDiscounts,
+    dependentsNumber,
+    setDependentsNumber,
+    bruteSalary,
+    totalDiscounts
+  } = useContext(AppContext);
+
   const { name } = props
 
   function conditionalRender() {
@@ -16,7 +24,7 @@ function CalculatorInputs(props) {
           </label>
           <input
             onChange={ ({ target }) => setBruteSalary(target.value) }
-            placeholder="0,00"
+            value={ bruteSalary }
             id="bruteSalary"
           />
         </div>
@@ -33,7 +41,7 @@ function CalculatorInputs(props) {
           </label>
           <input 
             onChange={ ({ target }) => setTotalDiscounts(target.value)}
-            placeholder="0,00"
+            value={ totalDiscounts }
             id="totalDiscounts"
           />
         </div>
@@ -48,12 +56,19 @@ function CalculatorInputs(props) {
           >
             Quantos dependentes você tem?
           </label>
-          <button onClick={ () => setDependentsNumber((prevState) => prevState - 1) }>-</button>
+          <button onClick={ () => {
+            setDependentsNumber((prevState) => 
+              prevState === 0 || prevState === "" ? 0 : prevState - 1
+            ) } }
+          >
+            -
+          </button>
           <input
             onChange={ ({ target }) => setDependentsNumber(target.value)}
             value={ dependentsNumber }
             placeholder="0"
             id="dependentsNumber"
+            type="number"
           />
           <button
             onClick={ () => setDependentsNumber((prevState) => Number(prevState) + 1) }
