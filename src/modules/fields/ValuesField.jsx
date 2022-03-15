@@ -7,12 +7,12 @@ const ValuesField = () => {
     <fieldset className='flex'>
       <label>
         <p>Qual seu salário bruto?</p>
-        <ValueInput testId='gross-salary-input' />
+        <ValueInput testId='gross-salary-input' contextKey='setGlossSalary' />
         <MoreInfos>Salário bruto sem descontos</MoreInfos>
       </label>
       <label className='mx-10'>
         <p>Total de descontos</p>
-        <ValueInput testId='total-discount-input' />
+        <ValueInput testId='total-discount-input' contextKey='setDiscount' />
         <MoreInfos>Pensão alimentícia, plano de saúde...</MoreInfos>
       </label>
     </fieldset>
