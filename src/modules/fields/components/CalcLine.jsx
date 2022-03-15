@@ -1,19 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { convertToReal } from '../../../utils';
 
 const CalcLine = ({ value, title }) => {
   return (
-    <div>
+    <div className='flex justify-between my-2 w-96'>
       <p>{title}</p>
-      <p>{`R$${convertToReal(value)}`}</p>
+      <p>{value}</p>
     </div>
   );
 };
 
 CalcLine.propTypes = {
   title: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default CalcLine;

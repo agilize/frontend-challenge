@@ -18,13 +18,29 @@ const CalcDetails = () => {
 
   return (
     <div>
-      <div>
-        <CalcLine value={glossSalary} title='Salário bruto' />
-        <CalcLine value={INSSDiscount} title={`INSS(%${INSSPercent})`} />
-        <CalcLine value={IRRFDiscount} title={`IRRF(%${IRRFPercent})`} />
-        <CalcLine value={discount} title={`Outros descontos`} />
+      <h3 className='text-center'>Como o cálculo é feito?</h3>
+      <div className='border-b'>
+        <CalcLine
+          value={`R$${convertToReal(glossSalary)}`}
+          title='Salário bruto'
+        />
+        <CalcLine
+          value={`- R$${convertToReal(INSSDiscount)}`}
+          title={`INSS(${INSSPercent}%)`}
+        />
+        <CalcLine
+          value={`- R$${convertToReal(IRRFDiscount)}`}
+          title={`IRRF(${IRRFPercent}%)`}
+        />
+        <CalcLine
+          value={`- R$${convertToReal(discount)}`}
+          title={`Outros descontos`}
+        />
       </div>
-      <CalcLine value={netSalary} title='Salário líquido' />
+      <CalcLine
+        value={`R$${convertToReal(netSalary)}`}
+        title='Salário líquido'
+      />
     </div>
   );
 };
