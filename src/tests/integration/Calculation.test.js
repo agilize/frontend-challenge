@@ -43,9 +43,9 @@ describe('Perform calculation correctly', () => {
     const netSalaries = [
       '825,00',
       '1.638,18',
-      '2.421,15',
-      '3.119,09',
-      '3.743,13',
+      '2.376,15',
+      '3.029,09',
+      '3.605,63',
     ];
     grossSalaries.forEach((salary, index) => {
       it(`Salary of R$${salary} and discount of R$${discounts[index]}`, () => {
@@ -67,9 +67,9 @@ describe('Perform calculation correctly', () => {
     const netSalaries = [
       '825,00',
       '1.638,18',
-      '2.431,00',
-      '3.191,80',
-      '3.921,38',
+      '2.411,63',
+      '3.131,80',
+      '3.808,88',
     ];
     grossSalaries.forEach((salary, index) => {
       it(`Salary of R$${salary}, discount of R$${discounts[index]} and ${dependentes[index]} dependents`, () => {
