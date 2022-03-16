@@ -3,22 +3,19 @@
 # [Calculadora Agilize](https://calculadora-agilize.herokuapp.com/)
 </div>
 
+Calcula o salário líquido da pessoa usuária deduzindo o INSS, IRRF e outros descontos.
+
 [![Imagem da aplicação](public/app.png)](https://calculadora-agilize.herokuapp.com/)
 
 Aplicação desenvolvido para o desafio técnico de front-end da [Agilize](https://agilize.com.br/).
 
 <br />
 
-## Funcionalidade
-
-Calcula o salário líquido da pessoa usuária deduzindo o INSS, IN 
-
-
 ## Tecnologias utilizadas
 ---
 - ### **React** - Como tecnologia base para criação da interface;
 - ### **ContextAPI** - Para o compartilhamento de estado entre os componentes;
-- ### **Tailwind** + **TailwindStyledComponents** - Para facilitar a estilização dos componentes;
+- ### **Tailwind** - Para facilitar a estilização dos componentes;
 - ### **ReactTestLibrary** - Para o desenvolvimento dos testes;
 - ### **Gitemoji** + **Commitzen** - Para padronizar os commits;
 
@@ -38,18 +35,8 @@ src
 │   └── unitary
 └── utils
 ```
-## Testes
----
-A aplicação foi construida baseado no modelo [TDD](https://www.devmedia.com.br/test-driven-development-tdd-simples-e-pratico/18533). Os testes referentes aos componentes foram escritos antes deles funcionarem em si. Em alguns componentes não foi possível fazer testes unitários, mas estão englobados no teste de Integração.
 
-### Comando para rodar os testes:
 
-```
-npm run test
-```
-**Obs:** O nome do arquivo de testes pode ser passado como parâmetro para uma descrição mais detalhada.
-
-![Testes do formulário de valores](public/testes.png)
 
 ## Iniciando a aplicação
 ---
@@ -79,4 +66,15 @@ O deploy foi feito utilizando o [Heroku](https://dashboard.heroku.com/) com o bu
 
 Link do Deploy: https://calculadora-agilize.herokuapp.com/
 
+## Testes
+---
+A aplicação foi construida baseado no modelo [TDD](https://www.devmedia.com.br/test-driven-development-tdd-simples-e-pratico/18533). Os testes referentes aos componentes foram escritos antes deles funcionarem em si. Em alguns componentes não foi possível fazer testes unitários, mas estão englobados no teste de Integração.
+### Comando para rodar os testes:
+
+```
+npm run test
+```
+**Obs:** O nome do arquivo de testes pode ser passado como parâmetro para uma descrição mais detalhada.
+
+![Testes do formulário de valores](public/testes.png)
 
