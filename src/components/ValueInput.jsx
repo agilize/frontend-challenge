@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
-import { RealInput, RealSymbol } from '../styles/CalculationForm';
 import { removeLetters, addCentsSeparator, convertToReal } from '../utils';
 import Context from '../context';
 
@@ -25,9 +24,10 @@ const ValueInput = ({ testId, contextKey }) => {
   };
   return (
     <div className='flex my-1'>
-      <RealSymbol>R$</RealSymbol>
-      <RealInput
+      <span className='p-2 text-gray-800 bg-gray-300 rounded-l-full'>R$</span>
+      <input
         type='text'
+        className='w-32 pl-2 text-gray-800 rounded-r-full'
         data-testid={testId}
         value={currencyValue}
         onChange={({ target }) => formatValue(target.value)}

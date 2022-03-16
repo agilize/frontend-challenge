@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import CalculationForm from './modules/CalculationForm';
 import CalcResult from './modules/CalcResult';
 import Header from './modules/Header';
-import { Base } from './styles/Base.js';
 import Context from './context';
 import CalcDetails from './modules/CalcDetails';
 
@@ -33,12 +32,12 @@ function App() {
 
   return (
     <Context.Provider value={contextValue}>
-      <Base>
+      <div className='flex flex-col items-center h-screen bg-gradient'>
         <Header />
         <CalculationForm />
         <CalcResult />
         <CalcDetails />
-      </Base>
+      </div>
     </Context.Provider>
   );
 }
