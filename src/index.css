@@ -1,0 +1,36 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable */
+
+body {
+  margin: 0;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input:focus {
+  outline-width: 0;
+}
+
+.bg-gradient {
+  background: linear-gradient(
+    116.58deg,
+    #5a2782 0%,
+    #7a1f9a 29.33%,
+    #4939a7 60.02%,
+    #0b7fb0 79.47%
+  );
+}
+
+.bg-circle {
+  background-image: url('/src/images/bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
