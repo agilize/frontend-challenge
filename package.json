@@ -13,8 +13,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
+    "build": "react-scripts build",
     "eject": "react-scripts eject",
     "commit": "git-cz"
   },
@@ -47,7 +47,9 @@
     "@commitlint/config-conventional": "^16.2.1",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.2.0",
-    "husky": "^7.0.4"
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "jest-watch-typeahead": "^0.6.5"
   },
   "config": {
     "commitizen": {

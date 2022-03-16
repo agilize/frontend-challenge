@@ -26,6 +26,7 @@ function CalculatorInputs(props) {
             onChange={ ({ target }) => setBruteSalary(target.value) }
             value={ bruteSalary }
             id="bruteSalary"
+            data-testid="bruteSalary"
           />
         </div>
       )
@@ -43,6 +44,7 @@ function CalculatorInputs(props) {
             onChange={ ({ target }) => setTotalDiscounts(target.value)}
             value={ totalDiscounts }
             id="totalDiscounts"
+            data-testid="totalDiscounts"
           />
         </div>
       )
@@ -56,7 +58,9 @@ function CalculatorInputs(props) {
           >
             Quantos dependentes você tem?
           </label>
-          <button onClick={ () => {
+          <button
+            data-testid="btn-decrement"
+            onClick={ () => {
             setDependentsNumber((prevState) => 
               prevState === 0 || prevState === "" ? 0 : prevState - 1
             ) } }
@@ -69,8 +73,11 @@ function CalculatorInputs(props) {
             placeholder="0"
             id="dependentsNumber"
             type="number"
+            data-testid="dependentsNumber"
+
           />
           <button
+            data-testid="btn-increment"
             onClick={ () => setDependentsNumber((prevState) => Number(prevState) + 1) }
           >
             +

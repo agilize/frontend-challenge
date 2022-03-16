@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
+import calculateEarnings from '../helpers/CalculateEarning';
 
 function Table() {
   const { 
-    calculateEarnings,
     bruteSalary,
     totalDiscounts,
     dependentsNumber,
@@ -33,24 +33,24 @@ function Table() {
     <table>
       <tbody>
         <tr>
-          <td>Salário bruto</td>
-          <td>R$ {bruteSalary}</td>
+          <td data-testid="bruteSalary-td-name">Salário bruto</td>
+          <td data-testid="bruteSalary-td-value">R$ {bruteSalary}</td>
         </tr>
         <tr>
-          <td>INSS{`(${inssPercentage}%)`}</td>
-          <td>-R$ {INSS}</td>
+          <td data-testid="inss-td-name">INSS{`(${inssPercentage}%)`}</td>
+          <td data-testid="inss-td-value">-R$ {INSS}</td>
         </tr>
         <tr>
-          <td>IRRF{`(${aliquot}%)`}</td>
-          <td>-R$ {IRRF}</td>
+          <td data-testid="irrf-td-name">IRRF{`(${aliquot}%)`}</td>
+          <td data-testid="irrf-td-value">-R$ {IRRF}</td>
         </tr>
         <tr>
-          <td>Outros descontos</td>
-          <td>-R$ {totalDiscounts}</td>
+          <td data-testid="discounts-name">Outros descontos</td>
+          <td data-testid="discounts-value">-R$ {totalDiscounts}</td>
         </tr>
         <tr>
-          <td>Salário Líquido</td>
-          <td>-R$ {liquidSalary}</td>
+          <td data-testid="liquid-salary-name">Salário Líquido</td>
+          <td data-testid="liquid-salary-value">-R$ {liquidSalary}</td>
         </tr>
       </tbody>
     </table>

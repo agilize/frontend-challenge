@@ -23,8 +23,8 @@ function Calculator() {
       <CalculatorInputs name="bruteSalary"/>
       <CalculatorInputs name="totalDiscounts"/>
       <CalculatorInputs name="dependentsNumber" />
-      <button onClick={() => setRenderTable(true) }>Calcular</button>
-      <button onClick={ clearInputValues }>Limpar</button>
+      <button name="Calcular" onClick={() => setRenderTable(true) }>Calcular</button>
+      <button name="Limpar" onClick={ clearInputValues }>Limpar</button>
       {
         renderTable &&
         <Table />
