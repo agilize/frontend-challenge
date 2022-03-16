@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import MoreInfos from '../components/MoreInfos';
 import PlusCircle from '../images/plus-circle.png';
 import MinusCircle from '../images/minus-circle.png';
-import { DependentesInput } from '../styles/CalculationForm';
 import Context from '../context';
 
 const DependentsField = () => {
@@ -34,7 +33,8 @@ const DependentsField = () => {
         >
           <img src={PlusCircle} alt='Símbolo de mais' className='h-5' />
         </button>
-        <DependentesInput
+        <input
+          className='w-16 p-2 mx-1 text-center text-gray-800 rounded-full'
           type='text'
           data-testid='dependents-number-input'
           value={dependents}
