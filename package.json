@@ -1,0 +1,21 @@
+{
+  "name": "frontend-challenge",
+  "version": "1.0.0",
+  "description": "Para iniciar um cálculo de salário líquido, o primeiro dado cadastrado será o valor do salário bruto. Com essa informação você terá a base para os percentuais de descontos que serão feitos durante o processo de cálculo.",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd calculadora-salario && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcosAlbuquerque/frontend-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcosAlbuquerque/frontend-challenge/issues"
+  },
+  "homepage": "https://github.com/MarcosAlbuquerque/frontend-challenge#readme"
+}
