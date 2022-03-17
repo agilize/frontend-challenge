@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic');
+
+* {
+  font-family: roboto;
+}
+
 body {
   margin: 0;
   background: linear-gradient(
@@ -7,5 +13,125 @@ body {
     #4939a7 60.02%,
     #0b7fb0 79.47%
   );
-  height: 100vmin;
+  height: 1400px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  display: inherit;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 45px;
+  text-align: center;
+}
+
+header h1 {
+  color: white;
+  margin: 51px auto;
+  font-weight: 600;
+}
+
+#form {
+  width: 80%;
+}
+
+h2 {
+  margin: 15px;
+  font-weight: 500;
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px 120px;
+}
+
+input[type='text'] {
+  display: block;
+  padding-left: 20px;
+  border: none;
+  border-radius: 0 50px 50px 0;
+  font-size: 28px;
+  width: 200px;
+}
+
+label {
+  border-radius: 50px 0 0 50px;
+  font-size: 28px;
+  background-color: #e5e2e9;
+  padding: 20px;
+  color: #595066;
+}
+
+i {
+  border: 2px solid white;
+  border-radius: 100%;
+  color: white;
+  padding: 4px 7px;
+}
+
+form div span {
+  display: flex;
+}
+
+form div span:last-child {
+  padding: 12px 0;
+  color: white;
+  font-style: normal;
+  align-items: center;
+}
+
+.icon1 {
+  height: 30px;
+  margin-right: 10px;
+}
+
+#depententes {
+  height: 73px;
+  border-radius: 50px;
+  width: 15px !important;
+  padding: 0 45px;
+}
+
+#decrement,
+#increment {
+  border: none;
+  background-color: transparent;
+}
+
+#calcular {
+  display: flex;
+  align-items: center;
+}
+
+#calcular button {
+  height: 73px;
+  border: none;
+  border-radius: 50px;
+  width: 173px;
+  padding: 0 45px;
+  background-color: #71ffa0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 900px) {
+  form > div {
+    width: 300px;
+  }
+
+  #calcular {
+    display: flex;
+    justify-content: center;
+  }
 }
