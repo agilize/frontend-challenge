@@ -10,9 +10,13 @@ function CalculatorInputs(props) {
     bruteSalary,
     totalDiscounts
   } = useContext(AppContext);
-
   const { name } = props
 
+  function dependents({ target }) {
+    const dependentsToNumber = Number(target.value);
+    setDependentsNumber(dependentsToNumber);
+  }
+  
   function conditionalRender() {
     if (name === "bruteSalary") {
       return (
@@ -60,6 +64,7 @@ function CalculatorInputs(props) {
           </label>
           <button
             data-testid="btn-decrement"
+            min="0"
             onClick={ () => {
             setDependentsNumber((prevState) => 
               prevState === 0 || prevState === "" ? 0 : prevState - 1
@@ -68,13 +73,11 @@ function CalculatorInputs(props) {
             -
           </button>
           <input
-            onChange={ ({ target }) => setDependentsNumber(target.value)}
+            onChange={dependents}
             value={ dependentsNumber }
-            placeholder="0"
+            placeholder={ 0.00 }
             id="dependentsNumber"
-            type="number"
             data-testid="dependentsNumber"
-
           />
           <button
             data-testid="btn-increment"

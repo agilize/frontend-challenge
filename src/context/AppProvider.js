@@ -6,6 +6,7 @@ function AppProvider({ children }) {
   const [totalDiscounts, setTotalDiscounts] = useState(0.00);
   const [dependentsNumber, setDependentsNumber] = useState(0.00);
 
+  
   const contextValue = {
     bruteSalary,
     setBruteSalary,

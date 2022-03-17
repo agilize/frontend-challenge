@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
-import calculateEarnings from '../helpers/CalculateEarning';
+import calculateEarnings from '../helpers/calculateEarning';
 
 function Table() {
   const { 

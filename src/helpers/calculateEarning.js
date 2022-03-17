@@ -36,29 +36,31 @@ const calculateEarnings = {
   },
 
   calculateInss: (bruteSalary, percentage) => {
-    return Number(bruteSalary * percentage / 100).toFixed(2)
+    const portionInss = bruteSalary * percentage / 100
+    return Number(portionInss.toFixed(2));
   },
 
   calculateIrrf: (deduction, dependents = 0) => {
     const { bruteSalary, INSS, aliquot, deductiblePortion} = deduction;
     if (dependents === 0 || dependents === "") {
-      return (
-        (bruteSalary - INSS) * aliquot/100 - deductiblePortion
-      ).toFixed(2)
-    }
+      const portionIrrf = (bruteSalary - INSS) * aliquot / 100 - deductiblePortion;
+      return Number(portionIrrf.toFixed(2));
+    };
 
     if (dependents > 0) {
-      return (
-        (bruteSalary - (dependents * 189.59)) * aliquot/100 - deductiblePortion
-      ).toFixed(2)
-    }
+      const portionIrrf = (
+        bruteSalary - (dependents * 189.59)
+      ) * aliquot / 100 - deductiblePortion
+ 
+      return Number(portionIrrf.toFixed(2))
+    };
   },
 
   calculateLiquidSalary: (deductions) => {
     const { bruteSalary, INSS, IRRF, totalDiscounts} = deductions;
-    return (
-      bruteSalary - INSS - IRRF - totalDiscounts
-    ).toFixed(2);
+    return Number(
+      (bruteSalary - INSS - IRRF - totalDiscounts)
+    .toFixed(2));
   }
 }
 
