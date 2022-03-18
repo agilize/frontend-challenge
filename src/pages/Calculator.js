@@ -4,6 +4,7 @@ import CalculatorInputs from '../components/Inputs';
 import Table from '../components/Table';
 import logo from '../assets/logo.png';
 import { ButtonCalculate, H1, Img, MainContainerCalculator } from '../styled-components/CalculatorStyle';
+import { ButtonClear } from '../styled-components/TableStyle';
 
 function Calculator() {
   const [renderTable, setRenderTable] = useState(false);
@@ -28,17 +29,18 @@ function Calculator() {
         <CalculatorInputs name="bruteSalary"/>
         <CalculatorInputs name="totalDiscounts"/>
         <CalculatorInputs name="dependentsNumber" />
-        <ButtonCalculate name="Calcular" 
+        <ButtonCalculate data-testid="btn-calcular" 
           onClick={() => setRenderTable(true) }
         >
-          Calcular
+          CALCULAR
         </ButtonCalculate>
       </MainContainerCalculator>
-      <button name="Limpar" onClick={ clearInputValues }>Limpar</button>
-      {
+      { renderTable && <Table />}
+      { 
         renderTable &&
-        <Table />
+        <ButtonClear name="Limpar" onClick={ clearInputValues }>LIMPAR</ButtonClear>
       }
+      
     </div>
   )
 };
