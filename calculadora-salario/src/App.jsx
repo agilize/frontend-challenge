@@ -1,8 +1,8 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import './styles/main.css';
 
 function App() {
-  // const [count, setCount] = useState(0);
+  const [result, setResult] = useState(0);
 
   return (
     <>
@@ -31,7 +31,7 @@ function App() {
             <h2>Qual seu salário bruto?</h2>
             <span>
               <label htmlFor='salBruto'>R$</label>
-              <input type='text' id='salBruto' placeholder='0,00' />
+              <input type='number' id='salBruto' placeholder='0,00' />
             </span>
             <span>
               {/* <img src={icon1} className='icon1' /> */}
@@ -54,7 +54,7 @@ function App() {
             <h2>Total de descontos</h2>
             <span>
               <label htmlFor='totalDesconto'>R$</label>
-              <input type='text' id='totalDesconto' placeholder='0,00' />
+              <input type='number' id='totalDesconto' placeholder='0,00' />
             </span>
             <span>
               {/* <img src={icon1} className='icon1' /> */}
@@ -91,7 +91,7 @@ function App() {
                   />
                 </svg>
               </button>
-              <input type='text' placeholder='0' id='depententes' />
+              <input type='number' placeholder='0' id='depententes' />
               <button id='increment'>
                 {/* <img src={icon3} /> */}
                 <svg
@@ -130,6 +130,41 @@ function App() {
           </div>
         </form>
       </section>
+      <section id='result'>
+        <h1>Seu salário líquido será</h1>
+        <div>
+          <p>
+            R$
+            <strong>{result}</strong>
+          </p>
+        </div>
+      </section>
+      <article id='bill'>
+        <h3>Como o cálculo é feito?</h3>
+        <div>
+          <span>
+            <p>Salário bruto</p>
+            <p>R$ 2.800,00</p>
+          </span>
+          <span>
+            <p>INSS (11%)</p>
+            <p>- R$ 245,00</p>
+          </span>
+          <span>
+            <p>IRRF (27.50%)</p>
+            <p>- R$ 6,17</p>
+          </span>
+          <span>
+            <p>Outros descontos</p>
+            <p>- R$ 150,00</p>
+          </span>
+        </div>
+        <hr />
+        <span>
+          <p>Salário líquido</p>
+          <p>R$ 2.398,83</p>
+        </span>
+      </article>
     </>
   );
 }

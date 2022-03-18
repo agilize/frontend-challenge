@@ -13,7 +13,7 @@ body {
     #4939a7 60.02%,
     #0b7fb0 79.47%
   );
-  height: 1400px;
+  /* height: 1400px; */
 }
 
 #root {
@@ -37,12 +37,17 @@ header h1 {
   font-weight: 600;
 }
 
-#form {
+#form,
+#result {
   width: 80%;
 }
 
+#form em {
+  font-style: normal;
+}
+
 h2 {
-  margin: 15px;
+  margin: 15px 0;
   font-weight: 500;
   color: white;
 }
@@ -55,7 +60,7 @@ form {
   gap: 30px 120px;
 }
 
-input[type='text'] {
+input[type='number'] {
   display: block;
   padding-left: 20px;
   border: none;
@@ -88,6 +93,7 @@ form div span:last-child {
   color: white;
   font-style: normal;
   align-items: center;
+  gap: 0 5px;
 }
 
 .icon1 {
@@ -125,13 +131,85 @@ form div span:last-child {
   font-size: 18px;
 }
 
+#result {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0 20px;
+  margin-top: 30px;
+}
+
+#result > div {
+  height: 134px;
+  width: 401px;
+  background-image: url('../assets/bg.svg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#result > h1 {
+  font-size: 36px;
+  font-weight: 300;
+  color: white;
+}
+
+#result > div > p {
+  color: #71ffa0;
+  font-size: 48px;
+  font-weight: 600;
+}
+
+#bill {
+  margin: 73px 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 336px;
+}
+
+#bill > h3 {
+  font-size: 24px;
+}
+
+#bill > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#bill span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#bill > hr {
+  width: 100%;
+}
+
 @media screen and (max-width: 900px) {
   form > div {
     width: 300px;
   }
 
+  form > div > span {
+    justify-content: center;
+  }
+
   #calcular {
     display: flex;
     justify-content: center;
+  }
+
+  #result {
+    flex-direction: column;
   }
 }
