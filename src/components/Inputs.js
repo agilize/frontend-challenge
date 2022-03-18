@@ -1,5 +1,20 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
+import {
+  MainContainerInputs,
+  Div,
+  ImgVector,
+  Inputs,
+  Label,
+  P,
+  Container,
+  InputDependents,
+  Button,
+  ImgButton,
+  ContainerDependents, } from '../styled-components/InputStyle';
+import vector from '../assets/vector.png';
+import decrement from '../assets/decrement.png';
+import increment from '../assets/increment.png';
 
 function CalculatorInputs(props) {
   const {
@@ -20,72 +35,94 @@ function CalculatorInputs(props) {
   function conditionalRender() {
     if (name === "bruteSalary") {
       return (
-        <div>
-          <label
+        <MainContainerInputs>
+          <Label
             htmlFor="bruteSalary"
           >
             Qual seu salário bruto?
-          </label>
-          <input
-            onChange={ ({ target }) => setBruteSalary(target.value) }
-            value={ bruteSalary }
-            id="bruteSalary"
-            data-testid="bruteSalary"
-          />
-        </div>
+          </Label>
+          <Container>
+            <Div>R$</Div>
+            <Inputs
+              onChange={ ({ target }) => setBruteSalary(target.value) }
+              placeholder="0.00"
+              value={ bruteSalary === 0 ? '' : bruteSalary}
+              id="bruteSalary"
+              data-testid="bruteSalary"
+            />
+          </Container>
+          <P>
+            <ImgVector src={ vector } alt="vector"/> Salário bruto
+            sem descontos
+          </P>
+        </MainContainerInputs>
       )
     }
 
     if(name === "totalDiscounts") {
       return (
-        <div>
-          <label
+        <MainContainerInputs>
+          <Label
             htmlFor="totalDiscounts"
           >
             Total de descontos
-          </label>
-          <input 
-            onChange={ ({ target }) => setTotalDiscounts(target.value)}
-            value={ totalDiscounts }
-            id="totalDiscounts"
-            data-testid="totalDiscounts"
-          />
-        </div>
+          </Label>
+          <Container>
+            <Div>R$</Div>
+            <Inputs 
+              onChange={ ({ target }) => setTotalDiscounts(target.value)}
+              placeholder="0.00"
+              value={ totalDiscounts === 0 ? '' : totalDiscounts }
+              id="totalDiscounts"
+              data-testid="totalDiscounts"
+            />
+          </Container>
+          <P>
+            <ImgVector src={ vector } alt="vector"/> Pensão alimentícia,
+            plano de saúde...
+          </P>
+        </MainContainerInputs>
       )
     }
 
     if (name === "dependentsNumber") {
       return (
-        <div>
-          <label
+        <MainContainerInputs>
+          <Label
             htmlFor="dependentsNumber"
           >
             Quantos dependentes você tem?
-          </label>
-          <button
-            data-testid="btn-decrement"
-            min="0"
-            onClick={ () => {
-            setDependentsNumber((prevState) => 
-              prevState === 0 || prevState === "" ? 0 : prevState - 1
-            ) } }
-          >
-            -
-          </button>
-          <input
-            onChange={dependents}
-            value={ dependentsNumber }
-            placeholder={ 0.00 }
-            id="dependentsNumber"
-            data-testid="dependentsNumber"
-          />
-          <button
-            data-testid="btn-increment"
-            onClick={ () => setDependentsNumber((prevState) => Number(prevState) + 1) }
-          >
-            +
-          </button>
-        </div>
+          </Label>
+          <ContainerDependents>
+            <Button
+              data-testid="btn-decrement"
+              min="0"
+              onClick={ () => {
+              setDependentsNumber((prevState) => 
+                prevState === 0 || prevState === "" ? 0 : prevState - 1
+              ) } }
+            >
+              <ImgButton src={ decrement } alt="decrement vector"/>
+            </Button>
+            <InputDependents
+              onChange={dependents}
+              placeholder="0"
+              value={ dependentsNumber === 0 ? '' : dependentsNumber }
+              id="dependentsNumber"
+              data-testid="dependentsNumber"
+            />
+            <Button
+              data-testid="btn-increment"
+              onClick={ () => setDependentsNumber((prevState) => Number(prevState) + 1) }
+            >
+              <ImgButton src={ increment } alt="increment vector" />
+            </Button>
+          </ContainerDependents>
+          <P>
+            <ImgVector src={ vector } alt="vector"/> Dependentes declarados no
+            imposto de renda
+          </P>
+        </MainContainerInputs>
       )
     }
   }

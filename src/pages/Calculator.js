@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import AppContext from '../context/AppContext';
 import CalculatorInputs from '../components/Inputs';
 import Table from '../components/Table';
+import logo from '../assets/logo.png';
+import { ButtonCalculate, H1, Img, MainContainerCalculator } from '../styled-components/CalculatorStyle';
 
 function Calculator() {
   const [renderTable, setRenderTable] = useState(false);
@@ -20,10 +22,18 @@ function Calculator() {
 
   return (
     <div>
-      <CalculatorInputs name="bruteSalary"/>
-      <CalculatorInputs name="totalDiscounts"/>
-      <CalculatorInputs name="dependentsNumber" />
-      <button name="Calcular" onClick={() => setRenderTable(true) }>Calcular</button>
+      <Img src={ logo } alt="logo Agilize"/>
+      <H1>Calculadora de salário líquido</H1>
+      <MainContainerCalculator>
+        <CalculatorInputs name="bruteSalary"/>
+        <CalculatorInputs name="totalDiscounts"/>
+        <CalculatorInputs name="dependentsNumber" />
+        <ButtonCalculate name="Calcular" 
+          onClick={() => setRenderTable(true) }
+        >
+          Calcular
+        </ButtonCalculate>
+      </MainContainerCalculator>
       <button name="Limpar" onClick={ clearInputValues }>Limpar</button>
       {
         renderTable &&
