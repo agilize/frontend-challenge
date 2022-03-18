@@ -79,7 +79,7 @@ const TableContainer = styled.div`
   margin: 0 auto 40px;
 `;
 
-const Tr = styled.td`
+const DivRow = styled.div`
   color: #FFFFFF;
   display: flex;
   justify-content: space-between;
@@ -125,7 +125,7 @@ export {
   Span,
   PTable,
   TableContainer,
-  Tr,
+  DivRow,
   Hr,
   ButtonClear
 };

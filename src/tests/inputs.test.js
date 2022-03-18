@@ -16,7 +16,7 @@ describe('Test the input change functions', () => {
     )
 
     const bruteSalaryInput = screen.getByTestId('bruteSalary');
-    const calculateBtn = screen.getByRole('button', { name: "Calcular" });
+    const calculateBtn = screen.getByTestId('btn-calcular');
 
     fireEvent.change(bruteSalaryInput, { target: { value: 2500 } });
     content.setBruteSalary();
@@ -40,7 +40,7 @@ describe('Test the input change functions', () => {
     )
 
     const totalDiscountsInput = screen.getByTestId('totalDiscounts');
-    const calculateBtn = screen.getByRole('button', { name: "Calcular" });
+    const calculateBtn = screen.getByTestId('btn-calcular');
 
     fireEvent.change(totalDiscountsInput, { target: { value: 150 } });
     content.setTotalDiscounts();
@@ -64,7 +64,7 @@ describe('Test the input change functions', () => {
     )
 
     const dependentsInput = screen.getByTestId('dependentsNumber');
-    const calculateBtn = screen.getByRole('button', { name: "Calcular" });
+    const calculateBtn = screen.getByTestId('btn-calcular');
 
     fireEvent.change(dependentsInput, { target: { value: 2 } });
     content.setDependentsNumber();
@@ -86,7 +86,7 @@ describe('Test the input change functions', () => {
     )
 
     const dependentsInput = screen.getByTestId('dependentsNumber');
-    const calculateBtn = screen.getByRole('button', { name: "Calcular" });
+    const calculateBtn = screen.getByTestId('btn-calcular');
 
     fireEvent.change(dependentsInput, { target: { value: 2 } });
     content.setDependentsNumber();
@@ -113,7 +113,7 @@ describe('Test the input change functions', () => {
     )
 
     const dependentsInput = screen.getByTestId('dependentsNumber');
-    const calculateBtn = screen.getByRole('button', { name: "Calcular" });
+    const calculateBtn = screen.getByTestId('btn-calcular');
 
     fireEvent.change(dependentsInput, { target: { value: 2 } });
     content.setDependentsNumber();

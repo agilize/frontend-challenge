@@ -9,7 +9,7 @@ import {
   PTable,
   Span,
   TableContainer,
-  Tr
+  DivRow
 } from '../styled-components/TableStyle';
 
 function Table() {
@@ -49,29 +49,29 @@ function Table() {
       </DivNetSalary>
       <TableContainer>
         <PTable>Como o cálculo é feito?</PTable>
-        <tbody>
-          <Tr>
-            <td data-testid="bruteSalary-td-name">Salário bruto</td>
-            <td data-testid="bruteSalary-td-value">R$ {bruteSalary.toFixed(2)}</td>
-          </Tr>
-          <Tr>
-            <td data-testid="inss-td-name">INSS{`(${inssPercentage}%)`}</td>
-            <td data-testid="inss-td-value">-R$ {INSS.toFixed(2)}</td>
-          </Tr>
-          <Tr>
-            <td data-testid="irrf-td-name">IRRF{`(${aliquot}%)`}</td>
-            <td data-testid="irrf-td-value">-R$ {IRRF.toFixed(2)}</td>
-          </Tr>
-          <Tr>
-            <td data-testid="discounts-name">Outros descontos</td>
-            <td data-testid="discounts-value">-R$ {totalDiscounts.toFixed(2)}</td>
-          </Tr>
+        <div>
+          <DivRow>
+            <div data-testid="bruteSalary-td-name">Salário bruto</div>
+            <div data-testid="bruteSalary-td-value">R$ {bruteSalary}</div>
+          </DivRow>
+          <DivRow>
+            <div data-testid="inss-td-name">INSS{`(${inssPercentage}%)`}</div>
+            <div data-testid="inss-td-value">-R$ {INSS}</div>
+          </DivRow>
+          <DivRow>
+            <div data-testid="irrf-td-name">IRRF{`(${aliquot}%)`}</div>
+            <div data-testid="irrf-td-value">-R$ {IRRF}</div>
+          </DivRow>
+          <DivRow>
+            <div data-testid="discounts-name">Outros descontos</div>
+            <div data-testid="discounts-value">-R$ {totalDiscounts}</div>
+          </DivRow>
           <Hr />
-          <Tr>
-            <td data-testid="liquid-salary-name">Salário Líquido</td>
-            <td data-testid="liquid-salary-value">-R$ {liquidSalary.toFixed(2)}</td>
-          </Tr>
-        </tbody>
+          <DivRow>
+            <div data-testid="liquid-salary-name">Salário Líquido</div>
+            <div data-testid="liquid-salary-value">-R$ {liquidSalary}</div>
+          </DivRow>
+        </div>
       </TableContainer>
     </div>
   )

@@ -36,11 +36,11 @@ describe("Check if the page contains the main elements", () => {
     const decrementButton = screen.getByTestId("btn-decrement");
     expect(decrementButton).toBeInTheDocument();
 
-    const calculateBtn = screen.getByRole('button', { name: "Calcular" });
+    const calculateBtn = screen.getByTestId('btn-calcular');
     expect(calculateBtn).toBeInTheDocument();
 
-    const clearBtn = screen.getByRole('button', { name: "Limpar" });
-    expect(clearBtn).toBeInTheDocument();
+    const clearBtn = screen.queryByTestId('btn-limpar');
+    expect(clearBtn).not.toBeInTheDocument();
   });
 });
 

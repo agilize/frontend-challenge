@@ -46,7 +46,8 @@ describe('Check table rendering after click calculate', () => {
   test('checks if td name renders after click', () => {
     render(<App />);
 
-    const calculateBtn = screen.getByRole('button', { name: "Calcular" });
+    const calculateBtn = screen.getByTestId('btn-calcular');
+
     userEvent.click(calculateBtn);
 
     const bruteSalaryTd = screen.queryByTestId('bruteSalary-td-name');
@@ -68,7 +69,7 @@ describe('Check table rendering after click calculate', () => {
   test('checks if td value renders after click', () => {
     render(<App />);
 
-    const calculateBtn = screen.getByRole('button', { name: "Calcular" });
+    const calculateBtn = screen.getByTestId('btn-calcular');
     userEvent.click(calculateBtn);
 
     const bruteSalaryTdValue = screen.queryByTestId('bruteSalary-td-value');
@@ -91,7 +92,7 @@ describe('Check table rendering after click calculate', () => {
 describe('Checks table removal by clicking "Limpar"', () => {
   test('removes td name by clicking "Limpar"', () => {
     render(<App />);
-    const calculateBtn = screen.getByRole('button', { name: "Calcular" });
+    const calculateBtn = screen.getByTestId('btn-calcular');
     userEvent.click(calculateBtn);
 
     const bruteSalaryTd = screen.queryByTestId('bruteSalary-td-name');
@@ -109,7 +110,7 @@ describe('Checks table removal by clicking "Limpar"', () => {
     const liquidSalaryTd = screen.queryByTestId('liquid-salary-name');
     expect(liquidSalaryTd).toBeInTheDocument();
 
-    const clearBtn = screen.getByRole('button', { name: "Limpar" });
+    const clearBtn = screen.getByTestId('btn-limpar');
     userEvent.click(clearBtn);
 
     expect(bruteSalaryTd).not.toBeInTheDocument();
@@ -124,7 +125,7 @@ describe('Checks table removal by clicking "Limpar"', () => {
   test('removes td value by clicking "Limpar"', () => {
     render(<App />);
 
-    const calculateBtn = screen.getByRole('button', { name: "Calcular" });
+    const calculateBtn = screen.getByTestId('btn-calcular');
     userEvent.click(calculateBtn);
 
     const bruteSalaryTdValue = screen.queryByTestId('bruteSalary-td-value');
@@ -142,7 +143,7 @@ describe('Checks table removal by clicking "Limpar"', () => {
     const liquidSalaryTdValue = screen.queryByTestId('liquid-salary-value');
     expect(liquidSalaryTdValue).toBeInTheDocument();
 
-    const clearBtn = screen.getByRole('button', { name: "Limpar" });
+    const clearBtn = screen.getByTestId('btn-limpar');
     userEvent.click(clearBtn);
 
     expect(bruteSalaryTdValue).not.toBeInTheDocument();

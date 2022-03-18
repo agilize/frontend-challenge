@@ -38,7 +38,12 @@ function Calculator() {
       { renderTable && <Table />}
       { 
         renderTable &&
-        <ButtonClear name="Limpar" onClick={ clearInputValues }>LIMPAR</ButtonClear>
+        <ButtonClear 
+          data-testid="btn-limpar"
+          onClick={ clearInputValues }
+        >
+          LIMPAR
+        </ButtonClear>
       }
       
     </div>
