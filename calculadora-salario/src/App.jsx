@@ -12,7 +12,7 @@ function App() {
   const [resultado, setResultado] = useState(0);
 
   function aliquotaINSS(salBruto) {
-    if (salBruto > 0 && salBruto <= 1222) return 0.075;
+    if (salBruto >= 0 && salBruto <= 1222) return 0.075;
     if (salBruto > 1222 && salBruto <= 2427.35) return 0.09;
     if (salBruto > 2427.35 && salBruto <= 3641.03) return 0.12;
     if (salBruto > 3641.04 && salBruto <= 7087.22) return 0.14;
@@ -20,7 +20,7 @@ function App() {
   }
 
   function aliquotaIRRF(salBruto) {
-    if (salBruto > 0 && salBruto <= 1903.98) return 0;
+    if (salBruto >= 0 && salBruto <= 1903.98) return 0;
     if (salBruto >= 1903.99 && salBruto <= 2826.65) return 0.075;
     if (salBruto >= 2826.66 && salBruto <= 3751.05) return 0.15;
     if (salBruto >= 3751.06 && salBruto <= 4664.68) return 0.225;
