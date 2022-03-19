@@ -1,25 +1,21 @@
-# Calculadora de salário liquido
+# Bem vindo ao repositório do projeto Calculadora de salário liquido
 
-Para iniciar um cálculo de salário líquido, o primeiro dado cadastrado será o valor do salário bruto. Com essa informação você terá a base para os percentuais de descontos que serão feitos durante o processo de cálculo.
+A calculadora foi elaborada com a intenção de automatizar alguns calculos da folha de pagamento, com campos para digitar o salário bruto, descontos vigentes e número de dependentes. A calculadora retorna os detalhes como salário líquido, descontos (pensão alimentícia, plano de saúde...) e as parcelas de IRRF e INSS.
 
-Em seguida, devem ser levantados todos os descontos realizados em um determinado mês. 
+## Tecnologias utilizadas
 
-Esses descontos podem ser o INSS, o Imposto de Renda, desconto de vale transporte, vale refeição, planos de saúde e tudo que é descontado do seu salário.
-
-Contudo, também é preciso somar todos os adicionais recebidos, com adicional noturno, hora extra, insalubridade e qualquer benefício que possa ser somado no mês de referência.
-
-## O desafio
-
-- Fazer uma calculadora de salário liquido semelhante a essa do IDinheiro: [Acesse para visualizar](https://www.idinheiro.com.br/calculadoras/calculadora-de-salario-liquido/)
+- O projeto foi desenvolvido utilizando React.
+- Foi utilizado React Testing Library para desenvolver os testes. O projeto conta com 100% de cobertura de testes.
+- A estilização do projeto foi feita utilizando Styled-components. A intenção era reaproveitar ao máximo a utilização de componentes estilizados. Para saber mais sobre a lib [styled-components](https://styled-components.com/)
 - Confira o [layout do projeto](https://www.figma.com/file/wFJI3VnorFffh6tVcvYqlg/Calculadora-de-sal%C3%A1rio-l%C3%ADquido?node-id=1%3A12)
-- Tecnologias esperadas:
-  - React, Html, CSS
+- Foi utilizado commitzen e commitlint para a padronização e melhor organização nos commits.
 
-### Vamos a um exemplo para ficar mais fácil de entender? (Exemplo sem dependentes)
+## Segue abaixo a fórmula utilizada para a elaboração da calculadora.
+#### Vamos a um exemplo para ficar mais fácil de entender? (Exemplo sem dependentes)
 
 Imagine que você receba o salário de R$ 3.000,00 por mês, e o seu desconto de INSS seja de 9%.
 
-Primeiro, você verifica a faixa salarial e a alíquota correspondente, ou seja, para R$ 3.000,00 a alíquota é de 15%. Assim, para calcular o Imposto de Renda Retido na Fonte, você inicia descontando o valor pago para o INSS, que,  no exemplo, seria o salário bruto, R$ 3.000,00 menos 9%, ou seja, menos R$ 270,00.  E, depois, é só reduzir do valor a parcela dedutível. Nesse caso, teríamos o seguinte:
+Primeiro, você deve-se calcular a faixa salarial e a alíquota correspondente, ou seja, para R$ 3.000,00 a alíquota é de 15%. Assim, para calcular o Imposto de Renda Retido na Fonte, depois inicia descontando o valor pago para o INSS, que,  no exemplo, seria o salário bruto, R$ 3.000,00 menos 9%, ou seja, menos R$ 270,00.  E, então, é só reduzir do valor a parcela dedutível. Nesse caso, teríamos o seguinte:
 
 IRRF = (salário bruto – desconto INSS) x alíquota IRRF – parcela dedutível
 
@@ -27,11 +23,11 @@ IRRF = (3000-270) x 15% – 354,80
 
 IRRF = R$ 54,70 por mês.'
 
-**Bônus**:
+**Importante**:
 - Incluir calculo de dedução por dependentes na calculadora
   - A dedução é de **R$189,59** por cada dependente.
 
-### Exemplo com dependentes (BÔNUS)
+#### Exemplo com dependentes (BÔNUS)
 O valor reduzido passa a ser a nova base cálculo para o imposto de renda retido na fonte.
 
 Veja como fica:
@@ -65,23 +61,22 @@ Neste caso, o valor do salário após o desconto de R$ 103,10 em imposto de rend
 
 
 
-## Sugestões
+## Instruções para utilizar o projeto
+  1. Clone o repositório  
+   `git@github.com:brunocdeveloper/frontend-challenge.git`  
+   
+  2. Entre na pasta do repositório que você acabou de clonar:  
+    `cd frontend-challenge`
 
-- Faça um segundo README com o nome PROJETO.md explicando o que foi feito, como forma de documentação.
-- Diferenciais:
-    - Boa documentação
-    - Testes unitários modulares
+  3. Inicie o projeto com o comando `npm start`
 
-## Como você deve nos enviar sua solução?
+### Testes
+  Os testes foram desenvolvidos utilizando React Testing Library. Ao rodar o teste é criado a pasta coverage e no terminal é exibido a cobertura de todos os arquivos criados no projeto
+  1. Para rodar os testes `npm run test`
+  
 
-Faça um clone desde projeto, crie uma branch com seu nome-sobrenome e ao finalizar abra um pull-request para que um avaliador da agilize possa visualizar
-e envie um e-mail para [dev@agilize.com.br](mailto:dev@agilize.com.br) com o assunto: **[DESAFIO FRONTEND AGZ] + Finalizado + (nome-da-branch)**
+## Dúvidas sobre o projeto
+Caso queira saber mais sobre o desenvolvimento do projeto entre em contato: brunocmoraes97@gmail.com
 
-## Como abrir um pull request
-- Passo 1: Fazer um fork do projeto
-- Passo 2: Clonar seu fork para o seu computador
-- Passo 3: Fazer o projeto em sua branch
-- Passo 4: Abrir o pull request
 
-Para mais detalhes esse [link](https://www.webdevdrops.com/como-criar-um-pull-request-no-github-passo-a-passo/) tem uma explicação bastante completa
 
