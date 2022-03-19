@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "react-scripts test --coverage --verbose",
+    "test": "react-scripts test --coverage a",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "commit": "git-cz"

@@ -44,7 +44,9 @@ function CalculatorInputs(props) {
           <Container>
             <Div>R$</Div>
             <Inputs
-              onChange={ ({ target }) => setBruteSalary(target.value) }
+              onChange={ 
+                ({ target }) => setBruteSalary(target.value.replace(',', '.'))
+              }
               placeholder="0.00"
               value={ bruteSalary === 0 ? '' : bruteSalary}
               id="bruteSalary"
@@ -70,7 +72,9 @@ function CalculatorInputs(props) {
           <Container>
             <Div>R$</Div>
             <Inputs 
-              onChange={ ({ target }) => setTotalDiscounts(target.value)}
+              onChange={
+                ({ target }) => setTotalDiscounts(target.value.replace(',', '.'))
+              }
               placeholder="0.00"
               value={ totalDiscounts === 0 ? '' : totalDiscounts }
               id="totalDiscounts"
