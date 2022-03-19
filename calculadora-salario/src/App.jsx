@@ -6,7 +6,7 @@ function App() {
   const [calcImpostoINSS, setCalcImpostoINSS] = useState(0);
   const [calcDescontoIRRF, setCalcDescontoIRRF] = useState(0);
   const [calcImpostoIRRF, setCalcImpostoIRRF] = useState(0);
-  const [salBruto, setSalBruto] = useState(2800);
+  const [salBruto, setSalBruto] = useState(0);
   const [dependentes, setDependentes] = useState(0);
   const [totalDiscount, setTotalDiscount] = useState(0);
   const [resultado, setResultado] = useState(0);
@@ -20,6 +20,7 @@ function App() {
   }
 
   function aliquotaIRRF(salBruto) {
+    if (salBruto < 0) return 0;
     if (salBruto >= 0 && salBruto <= 1903.98) return 0;
     if (salBruto >= 1903.99 && salBruto <= 2826.65) return 0.075;
     if (salBruto >= 2826.66 && salBruto <= 3751.05) return 0.15;
@@ -146,7 +147,11 @@ function App() {
             <span>
               <button
                 id='decrement'
-                onClick={() => setDependentes((prev) => (prev <= 0 ? 0 : prev - 1))}
+                onClick={() => {
+                  if (salBruto === 0) {
+                    return setDependentes(0);
+                  } else setDependentes((prev) => (prev <= 0 ? 0 : prev - 1));
+                }}
               >
                 <svg
                   width='28'
@@ -167,7 +172,14 @@ function App() {
                 onChange={({ target }) => setDependentes(Number(target.value))}
                 id='dependentes'
               />
-              <button id='increment' onClick={() => setDependentes((prev) => prev + 1)}>
+              <button
+                id='increment'
+                onClick={() => {
+                  if (salBruto === 0) {
+                    return setDependentes(0);
+                  } else setDependentes((prev) => prev + 1);
+                }}
+              >
                 <svg
                   width='28'
                   height='28'
