@@ -2,12 +2,72 @@ import { useState } from 'react';
 import './styles/main.css';
 
 function App() {
-  const [result, setResult] = useState(0);
+  const [calcDescontoINSS, setCalcDescontoINSS] = useState(0);
+  const [calcImpostoINSS, setCalcImpostoINSS] = useState(0);
+  const [calcDescontoIRRF, setCalcDescontoIRRF] = useState(0);
+  const [calcImpostoIRRF, setCalcImpostoIRRF] = useState(0);
+  const [salBruto, setSalBruto] = useState(2800);
+  const [dependentes, setDependentes] = useState(0);
+  const [totalDiscount, setTotalDiscount] = useState(0);
+  const [resultado, setResultado] = useState(0);
+
+  function aliquotaINSS(salBruto) {
+    if (salBruto > 0 && salBruto <= 1222) return 0.075;
+    if (salBruto > 1222 && salBruto <= 2427.35) return 0.09;
+    if (salBruto > 2427.35 && salBruto <= 3641.03) return 0.12;
+    if (salBruto > 3641.04 && salBruto <= 7087.22) return 0.14;
+    if (salBruto > 7087.22) return 0.14;
+  }
+
+  function aliquotaIRRF(salBruto) {
+    if (salBruto > 0 && salBruto <= 1903.98) return 0;
+    if (salBruto >= 1903.99 && salBruto <= 2826.65) return 0.075;
+    if (salBruto >= 2826.66 && salBruto <= 3751.05) return 0.15;
+    if (salBruto >= 3751.06 && salBruto <= 4664.68) return 0.225;
+    if (salBruto > 4664.68) return 0.275;
+  }
+
+  function parcelaDedutivel(IRRF) {
+    if (IRRF === 0) return 0;
+    if (IRRF === 0.075) return 142.8;
+    if (IRRF === 0.15) return 354.8;
+    if (IRRF === 0.225) return 636.13;
+    if (IRRF === 0.27) return 869.36;
+    if (IRRF > 0.27) return 869.36;
+  }
+
+  function calcularResultado(salBruto) {
+    // Formula calculo 1
+    // const impostoINSS = aliquotaINSS(salBruto);
+    // const descontoINSS = salBruto * impostoINSS;
+    // const baseCalculo = salBruto - descontoINSS;
+    // const impostoIRRF = baseCalculo * aliquotaIRRF(baseCalculo) - parcelaDedutivel(aliquotaIRRF(baseCalculo));
+    // const salario = baseCalculo - impostoIRRF;
+
+    // Formula de calculo 2
+    const impostoINSS = aliquotaINSS(salBruto);
+    const descontoINSS = salBruto * impostoINSS;
+    let baseCalculo = 0;
+
+    if (dependentes > 0) {
+      baseCalculo = salBruto - 189.59 * dependentes;
+    } else baseCalculo = salBruto - descontoINSS;
+
+    const impostoIRRF = aliquotaIRRF(baseCalculo);
+    const descontoIRRF = baseCalculo * impostoIRRF;
+    const descontoDedutivel = descontoIRRF - parcelaDedutivel(impostoIRRF);
+    const salario = baseCalculo - descontoDedutivel - totalDiscount;
+
+    setResultado(salario.toFixed(2).replace('.', ','));
+    setCalcDescontoINSS(descontoINSS.toFixed(2).replace('.', ','));
+    setCalcImpostoINSS((impostoINSS * 100).toFixed(0));
+    setCalcDescontoIRRF(descontoIRRF.toFixed(2).replace('.', ','));
+    setCalcImpostoIRRF((impostoIRRF * 100).toFixed(0));
+  }
 
   return (
     <>
       <header>
-        {/* <img src={logo} alt='logo principal' /> */}
         <svg
           width='58'
           height='61'
@@ -16,8 +76,8 @@ function App() {
           xmlns='http://www.w3.org/2000/svg'
         >
           <path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
+            fillRule='evenodd'
+            clipRule='evenodd'
             d='M28.8352 60.5947C28.8011 60.5947 28.767 60.5947 28.7329 60.5947C12.8749 60.5947 0 47.1523 0 30.5944C0 14.0372 12.8749 0.594727 28.7329 0.594727C44.591 0.594727 57.4665 14.0372 57.4665 30.5944V55.9704C57.4665 58.5228 55.4815 60.5947 53.0368 60.5947C50.8551 60.5947 49.0841 58.7456 49.0841 56.4671V30.5938C49.0841 18.88 39.9701 9.36978 28.7443 9.36978C17.5185 9.36978 8.40453 18.8806 8.40453 30.5944C8.40453 42.3088 17.5185 51.8197 28.7443 51.8197C28.7748 51.8197 28.8435 51.8197 28.8531 51.8197C30.7885 51.8297 32.3563 53.4735 32.3563 55.4961V56.9183C32.3563 58.9472 30.7789 60.5947 28.8352 60.5947ZM44.918 30.5944V55.9498C44.918 58.5135 42.9246 60.5947 40.4698 60.5947C38.2779 60.5947 36.4991 58.7369 36.4991 56.449V30.5944C36.4991 26.1298 33.1118 22.504 28.8352 22.504C24.5591 22.504 21.0869 26.1292 21.0869 30.5938C21.0869 35.059 24.5591 38.6842 28.8352 38.6842C28.8465 38.6842 28.8567 38.6842 28.868 38.6842C30.7963 38.7023 32.3563 40.3443 32.3563 42.3619V43.7935C32.3563 45.823 30.7789 47.4699 28.8352 47.4699C28.8352 47.4699 28.7748 47.4699 28.7443 47.4699C19.8174 47.4699 12.57 39.9149 12.57 30.6088C12.57 21.3026 19.8174 13.747 28.7443 13.747C37.6665 13.747 44.9108 21.2951 44.918 30.5944Z'
             fill='white'
           />
@@ -26,15 +86,19 @@ function App() {
         <h1>Calculadora de salário líquido</h1>
       </header>
       <section id='form'>
-        <form>
+        <article>
           <div>
             <h2>Qual seu salário bruto?</h2>
             <span>
               <label htmlFor='salBruto'>R$</label>
-              <input type='number' id='salBruto' placeholder='0,00' />
+              <input
+                type='number'
+                id='salBruto'
+                placeholder='0,00'
+                onChange={({ target }) => setSalBruto(Number(target.value))}
+              />
             </span>
             <span>
-              {/* <img src={icon1} className='icon1' /> */}
               <svg
                 width='20'
                 height='20'
@@ -54,10 +118,14 @@ function App() {
             <h2>Total de descontos</h2>
             <span>
               <label htmlFor='totalDesconto'>R$</label>
-              <input type='number' id='totalDesconto' placeholder='0,00' />
+              <input
+                type='number'
+                id='totalDesconto'
+                placeholder='0,00'
+                onChange={({ target }) => setTotalDiscount(Number(target.value))}
+              />
             </span>
             <span>
-              {/* <img src={icon1} className='icon1' /> */}
               <svg
                 width='20'
                 height='20'
@@ -76,8 +144,10 @@ function App() {
           <div>
             <h2>Quantos dependentes você tem?</h2>
             <span>
-              <button id='decrement'>
-                {/* <img src={icon2} /> */}
+              <button
+                id='decrement'
+                onClick={() => setDependentes((prev) => (prev <= 0 ? 0 : prev - 1))}
+              >
                 <svg
                   width='28'
                   height='28'
@@ -91,9 +161,13 @@ function App() {
                   />
                 </svg>
               </button>
-              <input type='number' placeholder='0' id='depententes' />
-              <button id='increment'>
-                {/* <img src={icon3} /> */}
+              <input
+                type='number'
+                value={dependentes}
+                onChange={({ target }) => setDependentes(Number(target.value))}
+                id='dependentes'
+              />
+              <button id='increment' onClick={() => setDependentes((prev) => prev + 1)}>
                 <svg
                   width='28'
                   height='28'
@@ -109,7 +183,6 @@ function App() {
               </button>
             </span>
             <span>
-              {/* <img src={icon1} className='icon1' /> */}
               <svg
                 width='20'
                 height='20'
@@ -126,16 +199,16 @@ function App() {
             </span>
           </div>
           <div id='calcular'>
-            <button>Calcular</button>
+            <button onClick={() => calcularResultado(salBruto)}>Calcular</button>
           </div>
-        </form>
+        </article>
       </section>
       <section id='result'>
         <h1>Seu salário líquido será</h1>
         <div>
           <p>
             R$
-            <strong>{result}</strong>
+            <strong>{resultado}</strong>
           </p>
         </div>
       </section>
@@ -144,25 +217,25 @@ function App() {
         <div>
           <span>
             <p>Salário bruto</p>
-            <p>R$ 2.800,00</p>
+            <p>R$ {salBruto.toFixed(2).replace('.', ',')}</p>
           </span>
           <span>
-            <p>INSS (11%)</p>
-            <p>- R$ 245,00</p>
+            <p>INSS ({calcImpostoINSS}%)</p>
+            <p>- R$ {calcDescontoINSS}</p>
           </span>
           <span>
-            <p>IRRF (27.50%)</p>
-            <p>- R$ 6,17</p>
+            <p>IRRF ({calcImpostoIRRF}%)</p>
+            <p>- R$ {calcDescontoIRRF}</p>
           </span>
           <span>
             <p>Outros descontos</p>
-            <p>- R$ 150,00</p>
+            <p>- R$ {totalDiscount.toFixed(2).replace('.', ',')}</p>
           </span>
         </div>
         <hr />
         <span>
           <p>Salário líquido</p>
-          <p>R$ 2.398,83</p>
+          <p>R$ {resultado}</p>
         </span>
       </article>
     </>

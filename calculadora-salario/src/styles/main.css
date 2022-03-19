@@ -52,7 +52,7 @@ h2 {
   color: white;
 }
 
-form {
+article {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -84,11 +84,11 @@ i {
   padding: 4px 7px;
 }
 
-form div span {
+article div span {
   display: flex;
 }
 
-form div span:last-child {
+article div span:last-child {
   padding: 12px 0;
   color: white;
   font-style: normal;
@@ -101,10 +101,10 @@ form div span:last-child {
   margin-right: 10px;
 }
 
-#depententes {
+#dependentes {
   height: 73px;
   border-radius: 50px;
-  width: 15px !important;
+  width: 49px !important;
   padding: 0 45px;
 }
 
