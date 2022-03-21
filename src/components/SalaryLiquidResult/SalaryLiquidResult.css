@@ -1,0 +1,68 @@
+.salary-inputs-result-wrap {
+  color: #FFFFFF;
+  margin-top: 3em;
+}
+
+.liquid-salary-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.liquid-salary-wrap h1 {
+  font-weight: 300;
+  font-size: 26px;
+  margin-right: 1em;
+}
+
+.liquid-salary-span-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1.4em 5em;
+  color: #71FFA0;
+  background-image: url('../../assets/border.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.salary-prefix {
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 0.2em;
+  margin-right: 0.5em;
+}
+
+.liquid-salary-span {
+  font-weight: 600;
+  font-size: 34px;
+}
+
+.how-calculation-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-weight: 400;
+  font-size: 14px;
+  height: 26vh;
+  margin-top: 2.8em;
+}
+
+.how-calculation-span {
+  margin-bottom: 1em;
+}
+
+.space-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 20em;
+}
+
+.bar {
+  width: 20.2em;
+  height: 0.01em;
+  background: #FFFFFF;
+}

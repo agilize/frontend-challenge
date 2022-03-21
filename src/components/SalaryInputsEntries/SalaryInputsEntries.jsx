@@ -81,9 +81,11 @@ function SalaryInputsEntries() {
     const grossSalary = Number(grossSalaryValue.replace('.', '').replace(',', '.'));
     const discount = Number(discountValue.replace('.', '').replace(',', '.'));
 
-    const salaryResult = calculateLiquidSalary(grossSalary, dependentsValue, discount);
+    if (grossSalary !== 0 && grossSalary > 100) {
+      const salaryResult = calculateLiquidSalary(grossSalary, dependentsValue, discount);
 
-    setSalaryValues(salaryResult);
+      setSalaryValues(salaryResult);
+    }
   }
 
   return (
