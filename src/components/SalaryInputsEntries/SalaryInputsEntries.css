@@ -1,0 +1,137 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.salary-inputs-entries-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+.salary-inputs-entries-wrap input {
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  height: 5vh;
+  width: 7.5em;
+  margin-top: 0.8em;
+  font-weight: 400;
+  font-size: 16px;
+  color: #595066;
+  appearance: none;
+}
+
+.salary-inputs-entries-wrap h1 {
+  margin-top: 1em;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-top: 2em;
+}
+
+.inputs-wrap {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 4em;
+  width: 70em;
+}
+
+.inputs-wrap div {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs-wrap label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.2em;
+}
+
+.dependentsButton {
+  background: transparent;
+  border: none;
+  height: 1vh;
+  margin-top: 1.9em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.dependentsButton img {
+  width: 1.3em;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.doubt-span {
+  font-size: 12px;
+  font-weight: 300;
+  margin-top: 0.4em;
+}
+
+.doubt-span img {
+  width: 1em;
+  margin-right: 0.4em;
+  padding-top: 0.2em;
+  position: relative;
+}
+
+.prefix {
+  position: relative;
+}
+
+.prefix::before {
+  content: 'R$';
+  font-weight: 500;
+  color: #555;
+  position: absolute;
+  top: 5vh;
+  left: 1em;
+}
+
+.modal {
+  position: absolute;
+  top: 15.8vh;
+  transform: translateX(-46%);
+  width: 12em;
+  height: 16vh;
+  padding-top: 0.5em;
+  padding-right: 0.4em;
+  padding-left: 0.4em;
+  line-height: 1.5em;
+  text-align: center;
+  border-radius: 6px;
+  background: #555;
+}
+
+.calculate {
+  width: 8em;
+  height: 4vh;
+  text-align: center;
+  background: #71FFA0;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#gross-salary,
+#total-discount {
+  padding-top: 0.1em;
+  padding-left: 4em;
+}
+
+#dependents {
+  width: 4em;
+  text-align: center;
+}
+
+#dependents-input-wrap {
+  flex-direction: row;
+}
+
