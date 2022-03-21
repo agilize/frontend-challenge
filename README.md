@@ -52,4 +52,4 @@ Para testar a aplicação utilize o comando:
 npm test
 ```
 
-E selecionar o arquivo project.spec.js.
+E selecione o arquivo project.spec.js.
