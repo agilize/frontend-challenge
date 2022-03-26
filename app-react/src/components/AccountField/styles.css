@@ -1,0 +1,23 @@
+section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+section div {
+ text-align: center;
+}
+  
+section div input {
+  outline: none;
+  height: 28px;
+  width: 130px;
+  padding: 6px;
+  border-radius: 14rem;
+  border: none;
+}
+  
+section div .field-title {
+  font-size: 12px;
+  font-weight: 700;
+}
