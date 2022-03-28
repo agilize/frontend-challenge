@@ -8,7 +8,7 @@ function Header() {
       <div className='logo'>
         <img src={logo} />
       </div>
-      <h1>Calculadora de sálario liquido</h1>
+      <h1 className='main-title'>Calculadora de sálario liquido</h1>
     </header>
   ); 
 }

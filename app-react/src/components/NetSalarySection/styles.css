@@ -1,0 +1,20 @@
+.net-salary div {
+  display: flex;
+}
+
+.net-salary .net-salary--value {
+  margin-left: -90px;
+}
+
+.net-salary span {
+  font-style: normal;
+  font-size: 21px;
+  margin-right: 20px;
+}
+
+.net-salary img {
+  position: relative;
+  width: 172px;
+  bottom: 17px;
+}
+  
