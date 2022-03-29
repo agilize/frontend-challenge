@@ -1,0 +1,33 @@
+body {
+  height: 100vh;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 760px;
+  margin: auto;
+  color: #FFF;
+}
+
+.container-area {
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 30px;
+  margin-left: 4px;
+  position: absolute;
+  left: 20%;
+  top: 27%;
+  border-radius: 26px 0px 0px 26px;
+  background-color: #E5E2E9;
+  color: #595066;
+}
+
+.icon-two {
+  left: 35%;
+}
+
+.first-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 42px;
+  width: 85%;
+  margin-left: 32px;
+}
+
+.first-section .field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.first-section .field .field-title,
+.icon {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.first-section .field input {
+  outline: none;
+  height: 32px;
+  width: 112px;
+  padding: 6px 0px 6px 40px;
+  border-radius: 32rem;
+  border: none;
+  margin: 5px 0px;
+}
+
+.first-section .field .field-area--input {
+  display: flex;
+  align-items: center;
+}
+
+.first-section .field .field-area--input input {
+  width: 46px;
+  padding: 6px 16px;
+  text-align: center;
+}
+
+.first-section .field .field-area--input img {
+  width: 12px;
+  margin: 0px 4px;
+  cursor: pointer;
+}
+
+.first-section .field .field-warning {
+  display: flex;
+  align-items: center;
+}
+
+.first-section .field .field-warning img{
+  width: 8px;
+  margin-right: 4px;
+}
+
+.first-section .field .field-warning span{
+  font-size: 8px;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+  -webkit-appearance: none;
+  
+}
+input[type=number] { 
+ -moz-appearance: textfield;
+ appearance: textfield;
+
+}
+
+
+  

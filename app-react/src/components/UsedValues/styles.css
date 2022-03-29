@@ -1,0 +1,52 @@
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.container-values {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+  justify-content: space-evenly;
+}
+
+.container-values {
+  font-size: 12px;
+}
+
+.values-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: 100px;
+}
+
+.values div {
+  font-size: 10px;
+  margin: 4.5px 0px;
+}
+
+.container-values .sidebar {
+  background-color: #FFF;
+  height: 1px;
+  width: 200px;
+} 
+
+.values-area--end {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  margin-top: 8px;
+}
+
+.values-area--end div {
+  font-size: 10px;
+}
